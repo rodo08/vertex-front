@@ -40,6 +40,7 @@ const register = () => {
 .home-main {
   background-color: #fff;
   margin: 0 auto;
+  padding: 1rem;
   h1 {
     color: #4e1057;
   }
@@ -60,12 +61,13 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
   gap: 1rem;
 }
 
 h1 {
   margin: 0;
-  padding: 0.5rem 0 0 0;
+  padding: 1rem 0;
   font-size: 1.5rem;
   font-family: 'Nunito Sans', sans-serif;
 }
