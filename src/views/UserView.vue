@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import ProfileHeader from '../components/ProfileHeader.vue'
 
 const isVisible = ref(false)
 
@@ -237,7 +238,7 @@ const home = () => {
     </nav>
   </header>
   <section>
-    <Home />
+    <ProfileHeader />
   </section>
 </template>
 
@@ -265,6 +266,9 @@ nav {
   width: 100%;
   justify-content: space-between;
   position: relative;
+  img {
+    cursor: pointer;
+  }
 }
 
 nav ul {
@@ -316,6 +320,8 @@ svg {
   border: 3px solid #ef8dfe;
   border-radius: 0.5rem;
   background-color: #f7dcfb;
+  z-index: 999;
+  box-shadow: 3px 3px 3px rgba(93, 2, 116, 0.5);
   li a {
     color: #762882;
   }
