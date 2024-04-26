@@ -8,6 +8,9 @@ const router = useRouter()
 const user = () => {
   router.push('/user')
 }
+const home = () => {
+  router.push('/')
+}
 
 const formData = ref({
   file: '',
@@ -80,8 +83,10 @@ const onFileChange = (imageUrl) => {
         id="about"
         placeholder="Write something about you..."
       ></textarea>
-
-      <Button color="purple" text="Save" @click="user" />
+      <div class="register-buttons">
+        <Button color="purple" text="Cancel" @click="home" />
+        <Button color="purple" text="Save" @click="user" />
+      </div>
     </form>
   </main>
 </template>
@@ -155,5 +160,11 @@ form {
 }
 button {
   align-self: center;
+}
+.register-buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
 }
 </style>
