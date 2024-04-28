@@ -18,7 +18,6 @@ defineProps({ eventTitle: String, eventParagraph: String, buttonText: String })
 
 <style scoped>
 .dashboard-aside {
-  width: calc(100% - 2rem);
   fieldset {
     display: flex;
     flex-direction: column;
@@ -26,6 +25,7 @@ defineProps({ eventTitle: String, eventParagraph: String, buttonText: String })
     border-radius: 0.5rem;
     border: none;
     box-shadow: 3px 3px 3px rgba(190, 179, 194, 0.5);
+    padding: 1rem;
   }
   /* fieldset:hover {
     rotate: 1deg; 

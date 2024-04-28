@@ -13,8 +13,10 @@ import IconSettings from './icons/IconSettings.vue'
         <img src="../assets/pretty.png" alt="user image" />
       </div>
       <div class="profile__info">
-        <h1>Calamardo</h1>
-        <h2>Level 8</h2>
+        <fieldset>
+          <h1>Calamardo</h1>
+          <h2>Level 8</h2>
+        </fieldset>
       </div>
     </section>
     <aside class="profile-aside">
@@ -37,7 +39,7 @@ import IconSettings from './icons/IconSettings.vue'
         <li class="event-list__item">
           <DashBoardField
             eventTitle="Event Participation"
-            eventParagraph="Relive the excitement of past events you've attended. Browse through your attendance history, manage RSVPs, and even share your experiences."
+            eventParagraph="Relive past events. Browse through your attendance history, manage RSVPs, and even share your experiences."
             buttonText="Attended Events"
           />
         </li>
@@ -77,61 +79,83 @@ import IconSettings from './icons/IconSettings.vue'
 
 <style scoped>
 .main-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .profile {
+  width: 100%;
 }
 
 .profile__image {
-  img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 3px solid #ff00e1;
-    border-radius: 100%;
-    background-color: aqua;
-    box-shadow: 3px 3px 3px rgba(93, 2, 116, 0.5);
-  }
+  position: absolute;
+  padding-top: 2rem;
+  left: calc(25% - 100px);
+}
+.profile__image img {
+  width: 200px;
+  height: 200px;
+  border: 3px solid #ff00e1;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: aquamarine;
+  box-shadow: 3px 3px 3px rgba(93, 2, 116, 0.5);
+}
+.profile__info fieldset {
+  display: flex;
+  align-items: center;
+  margin-top: 7rem;
 }
 
-.profile__info {
-  /* Set width using calc() */
-  width: calc(100% - 2rem);
+.profile__info h1 {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0 0 0 2rem;
+  filter: drop-shadow(3px 3px 3px rgba(93, 2, 116, 0.5));
+}
+.profile__info h2 {
+  color: #ff00e1;
+  font-size: 2rem;
+  margin: 0;
+}
 
-  border: 2px solid #ff00e1;
+.profile__info fieldset {
   background-color: #762882;
-
-  h1 {
-    color: #fff;
-
-    filter: drop-shadow(3px 3px 3px rgba(33, 1, 42, 0.5));
-  }
-  h2 {
-    color: #ff00e1;
-  }
-}
-.profile-aside {
-  h2 {
-    color: #ff00e1;
-  }
-}
-ul,
-li {
+  border: 3px solid #ff00e1;
+  border-radius: 0.5rem;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
 }
 
 .event-list {
-  .event-list__item {
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding-top: 2rem;
 }
 .profile-aside__dashboard {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 4rem;
 }
 .profile-aside__dashboard__icon a {
-  svg {
-    width: 40px;
-    color: #762882;
-  }
-  h2 {
-    margin: 0;
-  }
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.profile-aside__dashboard__icon h2 {
+  font-size: 1.5rem;
+  color: #ff00e1;
+}
+
+.profile-aside__dashboard__icon a svg {
+  color: #762882;
+  height: 50px;
+  width: auto;
 }
 </style>
