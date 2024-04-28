@@ -3,7 +3,7 @@ import axios from 'axios'
 import { ref } from 'vue'
 
 const client = 'plypAcwRkABRhcMvUSR67cXgNETF8anKDtaf1x4NavFnrzdf3VbkCuxL'
-const query = ['friends', 'drink coffee', 'date', 'bar', 'sports', 'party', 'boxing']
+const query = ['people', 'drink coffee', 'date', 'movies', 'sports', 'party', 'festival']
 const randomNumber = Math.ceil(Math.random() * `${query.length}`)
 
 console.log(query.length, randomNumber)
