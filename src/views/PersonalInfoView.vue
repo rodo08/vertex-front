@@ -132,31 +132,6 @@ form {
   button {
     align-items: center;
   }
-
-  label {
-    width: 100%;
-    padding-bottom: 0.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-
-  input,
-  textarea,
-  select {
-    width: 100%;
-    height: 2.5rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid #6c4c67;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-  }
-  input,
-  select {
-    height: 2.5rem;
-  }
-  textarea {
-    height: 5rem;
-  }
 }
 button {
   align-self: center;

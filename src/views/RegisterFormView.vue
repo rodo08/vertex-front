@@ -56,6 +56,7 @@ const submitForm = () => {
 .form-container {
   width: 100%;
   padding: 1rem;
+  background-color: #ff00e1;
 }
 .call-to-action {
   display: flex;

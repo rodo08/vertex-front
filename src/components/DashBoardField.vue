@@ -22,7 +22,7 @@ defineProps({ eventTitle: String, eventParagraph: String, buttonText: String })
   fieldset {
     display: flex;
     flex-direction: column;
-    background-color: #fae9f5;
+    background-color: #e2fcff;
     border-radius: 0.5rem;
     border: none;
     box-shadow: 3px 3px 3px rgba(190, 179, 194, 0.5);
