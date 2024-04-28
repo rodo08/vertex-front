@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+// eslint-disable-next-line no-unused-vars
+import MainButton from '../components/MainButton.vue'
 import ProfileHeader from '../components/ProfileHeader.vue'
 
 const isVisible = ref(false)

@@ -13,7 +13,7 @@ button {
   color: white;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   border: 1px solid #fff;
-  width: 243px;
+  width: 220px;
   height: 38px;
   transition: background-color 0.3s ease;
 }

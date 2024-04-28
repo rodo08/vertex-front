@@ -1,17 +1,7 @@
-<!-- <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
-<template>
-  <main>
-    <TheWelcome />
-  </main>
-</template> -->
-
 <script setup>
-//defineProps(["title", "text", "id"]);
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
+import ImageGrid from '../components/ImageGrid.vue'
 
 const router = useRouter()
 const register = () => {
@@ -20,62 +10,92 @@ const register = () => {
 </script>
 
 <template>
-  <main class="home-main">
-    <section>
-      <div>
-        <img src="../assets/homeimage.png" width="400" alt="Vertex activities Moodboard" />
+  <main class="home__main">
+    <section class="home__section">
+      <div class="home__section__image-wrapper">
+        <ImageGrid />
       </div>
-      <div><img src="../assets/vertexlogopink.svg" alt="Vertex logo" /></div>
-      <h1>Welcome to Vertex</h1>
+      <div class="home__section__content">
+        <img src="../assets/vertexlogopink.svg" width="150" alt="Vertex logo" />
+        <h1>Welcome to Vertex</h1>
+        <p>
+          Empower Your Events: Create, Manage, and Deliver Exceptional Experiences. Take control of
+          your event planning and management with our intuitive, all-in-one web app.
+        </p>
+        <div class="home__buttons">
+          <Button text="Login" color="purple" />
+          <Button text="Register" color="pink" @click="register" />
+        </div>
+        <div class="home__legal-disclaim">
+          <p>
+            By clicking on the <a href="">Register</a> button, you agree to the
+            <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>, including
+            <a href="">Cookie Use</a> .
+          </p>
+        </div>
+      </div>
     </section>
-    <section class="home-buttons">
-      <Button text="Login" color="purple" />
-      <Button text="Register" color="pink" @click="register" />
-    </section>
-    <p class="footer-msg">Made with ❤️ from <strong style="margin-left: 5px">Grupo 03</strong></p>
   </main>
 </template>
 
 <style scoped>
-.home-main {
-  background-color: #fff;
-  margin: 0 auto;
-  padding: 1rem;
-  h1 {
-    color: #4e1057;
-  }
-}
-
-main section img:first-child {
-  padding-top: 1rem;
-}
-
-section {
+.home__main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
 }
 
-.home-buttons {
+.home__section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  max-width: 1080px;
+  padding-top: 8rem;
+  justify-items: center;
+}
+
+.home__section__image-wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  width: 100%;
+}
+.home__section__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home__section__content h1 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 2rem;
+  color: #4e1057;
+}
+.home__section__content p {
+  font-family: 'Nunito Sans', sans-serif;
+  text-align: center;
+  color: #4e1057;
+  width: 95%;
+}
+.home__buttons {
+  display: flex;
   gap: 1rem;
+  padding: 2.5rem 0 0.5rem 0;
+}
+.home__legal-disclaim p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  text-align: center;
+  width: 90%;
+}
+.home__legal-disclaim {
+  display: flex;
+  justify-content: center;
 }
 
-h1 {
-  margin: 0;
-  padding: 1rem 0;
-  font-size: 1.5rem;
-  font-family: 'Nunito Sans', sans-serif;
-}
-p {
-  padding-top: 2rem;
-  text-align: center;
-}
-strong {
+.home__legal-disclaim a {
   font-weight: bolder;
+  transition: color 0.3s ease-in;
+}
+.home__legal-disclaim a:hover {
+  color: #ff00e1;
 }
 </style>
