@@ -51,6 +51,7 @@ img {
   border: 5px solid #4e1057;
 }
 span {
+  text-align: center;
   font-weight: bolder;
   color: #fff;
   font-size: 1rem;

@@ -33,15 +33,15 @@ const onFileChange = (imageUrl) => {
 </script>
 
 <template>
-  <main class="personal-info">
-    <form @submit.prevent="submitForm">
-      <div info-title>
+  <main class="personal-info__main">
+    <form @submit.prevent="submitForm" class="personal-info__form">
+      <div class="personal-info__info-title">
         <h1>Personal Information</h1>
         <p>Fields marked with * are mandatory.</p>
       </div>
       <FileInputImage
         imageProp="../../src/assets/pretty.png"
-        textProp="Select your profile image..."
+        textProp="Select your profile image:"
         @change="onFileChange"
       />
 
@@ -52,7 +52,7 @@ const onFileChange = (imageUrl) => {
       <select
         v-model="formData.gender"
         id="gender"
-        class="form-select"
+        class="personal-info__form-select"
         aria-label="Default select example"
       >
         <option disabled selected value="">You identify yourself as:</option>
@@ -83,7 +83,7 @@ const onFileChange = (imageUrl) => {
         id="about"
         placeholder="Write something about you..."
       ></textarea>
-      <div class="register-buttons">
+      <div class="personal-info__register-buttons">
         <Button color="purple" text="Cancel" @click="home" />
         <Button color="purple" text="Save" @click="user" />
       </div>
@@ -92,53 +92,46 @@ const onFileChange = (imageUrl) => {
 </template>
 
 <style>
-:has(.personal-info) body {
+:has(.personal-info__main) body {
   background-color: #ff00e1;
 }
 
-.personal-info {
-  p {
-    margin-top: 0;
-    margin-bottom: 2rem;
-    color: #fff;
-  }
-  span {
-    color: #4e1057;
-  }
-}
-
-main {
+.personal-info__main {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 1rem;
   width: 100%;
-  h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
-    color: #fff;
-  }
 }
 
-form {
+.personal-info__main h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+}
+.personal-info__info-title {
+  display: flex;
+  flex-direction: column;
+}
+.personal-info__info-title p {
+  margin: 0;
+  padding: 0 0 4rem 0;
+}
+
+.personal-info__form {
   display: flex;
   flex-direction: column;
   max-width: 400px;
   width: 100%;
-  div {
-    display: flex;
-    flex-direction: column;
-  }
-  button {
-    align-items: center;
-  }
 }
-button {
-  align-self: center;
+
+.personal-info__form button {
+  align-items: center;
 }
-.register-buttons {
+
+.personal-info__register-buttons {
   display: flex;
-  flex-direction: row;
+  padding-bottom: 6rem;
   width: 100%;
   gap: 1rem;
 }
