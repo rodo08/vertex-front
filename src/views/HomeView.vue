@@ -49,7 +49,7 @@ const register = () => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  max-width: 1400px;
+  max-width: 1080px;
   padding-top: 8rem;
   justify-items: center;
 }
