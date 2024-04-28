@@ -1,7 +1,12 @@
 <script setup>
 import { defineProps } from 'vue'
 
-defineProps({ eventTitle: String, eventParagraph: String, buttonText: String })
+defineProps({
+  eventTitle: String,
+  eventParagraph: String,
+  buttonText: String,
+  handleClick: Function
+})
 </script>
 
 <template>
@@ -11,7 +16,9 @@ defineProps({ eventTitle: String, eventParagraph: String, buttonText: String })
       <p class="dashboard-aside__description">
         {{ eventParagraph }}
       </p>
-      <button type="button" class="dashboard-aside__create-button">{{ buttonText }}</button>
+      <button type="button" class="dashboard-aside__create-button" @click="handleClick">
+        {{ buttonText }}
+      </button>
     </fieldset>
   </aside>
 </template>
