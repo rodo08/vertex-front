@@ -5,8 +5,6 @@ import NavComponent from '../components/NavComponent.vue'
 import EventCard from '../components/EventCard.vue'
 import Button from '../components/MainButton.vue'
 
-//const client = 'plypAcwRkABRhcMvUSR67cXgNETF8anKDtaf1x4NavFnrzdf3VbkCuxL'
-
 const eventImgUrl = ref('')
 const eventTitleUrl = ref('')
 
