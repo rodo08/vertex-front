@@ -1,9 +1,27 @@
 <script setup>
 import { ref } from 'vue'
+import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import EventCard from '../components/EventCard.vue'
 import Button from '../components/MainButton.vue'
 
+//const client = 'plypAcwRkABRhcMvUSR67cXgNETF8anKDtaf1x4NavFnrzdf3VbkCuxL'
+
+const eventImgUrl = ref('')
+const eventTitleUrl = ref('')
+
+const getData = async () => {
+  try {
+    const { data } = await axios.get(`http://localhost:3001/data`)
+    console.log(data)
+    eventImgUrl.value = data[0].eventProfilePhoto
+    eventTitleUrl.value = data[0].eventDescription
+  } catch (error) {
+    console.log(error)
+  }
+}
+getData()
+//form - search
 const search = ref('')
 
 const submitForm = () => {
@@ -44,11 +62,7 @@ const submitForm = () => {
   </section>
   <section class="events">
     <div class="events__cards">
-      <EventCard
-        eventTitle="event vertex"
-        eventDate="10/12/2024"
-        eventImg="https://buffer.com/library/content/images/2023/10/free-images.jpg"
-      />
+      <EventCard :eventTitle="eventTitleUrl" eventDate="10/12/2024" :eventImg="eventImgUrl" />
       <EventCard />
       <EventCard />
       <EventCard />

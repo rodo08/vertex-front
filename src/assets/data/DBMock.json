@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "eventDate": "2024-04-29",
+      "eventLocation": "New York",
+      "eventDescription": "An exciting tech conference",
+      "eventProfilePhoto": "https://buffer.com/library/content/images/2023/10/free-images.jpg",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    }
+  ]
+}

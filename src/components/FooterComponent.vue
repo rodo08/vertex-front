@@ -51,7 +51,7 @@ const year = new Date().getFullYear()
             <a href="" target="_blank"><h3>Privacy Policy</h3></a>
           </li>
           <li>
-            <a href="" target="_blank"><h3>Contact</h3></a>
+            <a href="/holi" target="_blank"><h3>Contact</h3></a>
           </li>
         </ul>
       </div>
