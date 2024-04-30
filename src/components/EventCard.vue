@@ -19,7 +19,7 @@ defineProps({
             <p class="card__event-data__date">{{ eventDate }}</p>
           </fieldset>
         </div>
-        <img :src="eventImg" alt="event picture" />
+        <img :src="eventImg" alt="event picture" class="card__event-data__img" />
       </fieldset>
     </div>
   </section>
@@ -41,28 +41,35 @@ defineProps({
   box-shadow: 3px 3px 3px rgba(93, 2, 116, 0.5);
   padding: 0.5rem;
 }
-.card__event fieldset img {
+.card__event-data__img {
   border-radius: 0.3rem;
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.event__data {
+  position: relative;
 }
 
 .event__data fieldset {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  gap: 1rem;
-  padding-bottom: 0.5rem;
-  left: 1rem;
-  top: 1rem;
+  justify-items: center;
+  width: 95%;
+  left: 0.5rem;
+  top: 0.5rem;
   position: absolute;
+  padding-bottom: 0.5rem;
+  /* display: flex;
+  align-items: center;
+  gap: 1rem;  
+ */
 }
 .event__data h1,
 p {
   color: #ff00e1;
   margin: 0;
-}
-
-.card__event-data__title {
-}
-
-.card__event-data__date {
 }
 </style>
