@@ -4,16 +4,24 @@ import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import EventCard from '../components/EventCard.vue'
 import Button from '../components/MainButton.vue'
+import ButtonCategory from '../components/ButtonCategory.vue'
+import IconMovie from '../components/icons/IconMovie.vue'
+import IconMusic from '../components/icons/IconMusic.vue'
+import IconSports from '../components/icons/IconSports.vue'
+import IconOnline from '../components/icons/IconOnline.vue'
+import IconFriends from '../components/icons/IconFriends.vue'
+import IconSupport from '../components/icons/IconSupport.vue'
 
-const eventImgUrl = ref('')
-const eventTitleUrl = ref('')
+const eventValue = ref('')
+//const eventImgUrl = ref('')
+//const eventTitleUrl = ref('')
+//const eventDate = ref('')
 
 const getData = async () => {
   try {
     const { data } = await axios.get(`http://localhost:3001/data`)
     console.log(data)
-    eventImgUrl.value = data[0].eventProfilePhoto
-    eventTitleUrl.value = data[0].eventDescription
+    eventValue.value = data
   } catch (error) {
     console.log(error)
   }
@@ -27,6 +35,10 @@ const submitForm = () => {
     search: search.value
   }
   console.log('Form data:', formData)
+}
+
+const handleEventCard = () => {
+  console.log('test')
 }
 </script>
 
@@ -47,24 +59,46 @@ const submitForm = () => {
   <section class="subjects">
     <ul class="subjects__btn-group">
       <li>
-        <button><a href="">Films</a></button>
+        <a href=""><ButtonCategory category="Movies" color="red" :iconComponent="IconMovie" /></a>
       </li>
       <li>
-        <button><a href="">Music</a></button>
+        <a href=""><ButtonCategory category="Music" color="green" :iconComponent="IconMusic" /></a>
       </li>
       <li>
-        <button><a href="">Sports</a></button>
+        <a href=""
+          ><ButtonCategory category="Sports" color="orange" :iconComponent="IconSports"
+        /></a>
       </li>
-      <button><a href="">Online</a></button>
+      <li>
+        <a href=""><ButtonCategory category="Online" color="blue" :iconComponent="IconOnline" /></a>
+      </li>
+      <li>
+        <a href=""
+          ><ButtonCategory category="Friends" color="magenta" :iconComponent="IconFriends"
+        /></a>
+      </li>
+      <li>
+        <a href=""
+          ><ButtonCategory category="Support" color="purple" :iconComponent="IconSupport"
+        /></a>
+      </li>
     </ul>
   </section>
   <section class="events">
-    <div class="events__cards">
-      <EventCard :eventTitle="eventTitleUrl" eventDate="10/12/2024" :eventImg="eventImgUrl" />
-      <EventCard />
-      <EventCard />
-      <EventCard />
-    </div>
+    <ul class="events__cards">
+      <li
+        v-for="event in eventValue"
+        v-bind:key="event.id"
+        class="events__cards-item"
+        @click="handleEventCard"
+      >
+        <EventCard
+          :eventTitle="event.eventDescription"
+          :eventDate="event.eventDate"
+          :eventImg="event.eventProfilePhoto"
+        />
+      </li>
+    </ul>
   </section>
 </template>
 <style scoped>
@@ -100,5 +134,9 @@ const submitForm = () => {
   max-width: 1080px;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+  padding-bottom: 2rem;
+}
+.events__cards-item {
+  cursor: pointer;
 }
 </style>

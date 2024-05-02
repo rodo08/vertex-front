@@ -1,10 +1,66 @@
 {
   "data": [
     {
+      "id": "1",
       "eventDate": "2024-04-29",
-      "eventLocation": "New York",
+      "eventLocation": "Chicago",
       "eventDescription": "An exciting tech conference",
       "eventProfilePhoto": "https://buffer.com/library/content/images/2023/10/free-images.jpg",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "2",
+      "eventDate": "2024-08-29",
+      "eventLocation": "New York",
+      "eventDescription": "test 1",
+      "eventProfilePhoto": "https://images.pexels.com/photos/22839356/pexels-photo-22839356/free-photo-of-25-april-bridge.jpeg",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "3",
+      "eventDate": "2024-09-29",
+      "eventLocation": "Texas",
+      "eventDescription": "test 2",
+      "eventProfilePhoto": "https://images.pexels.com/photos/1142987/pexels-photo-1142987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "4",
+      "eventDate": "2024-04-29",
+      "eventLocation": "Chicago",
+      "eventDescription": "An exciting tech conference",
+      "eventProfilePhoto": "https://buffer.com/library/content/images/2023/10/free-images.jpg",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "5",
+      "eventDate": "2024-08-29",
+      "eventLocation": "New York",
+      "eventDescription": "test 1",
+      "eventProfilePhoto": "https://images.pexels.com/photos/22839356/pexels-photo-22839356/free-photo-of-25-april-bridge.jpeg",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "6",
+      "eventDate": "2024-09-29",
+      "eventLocation": "Texas",
+      "eventDescription": "test 2",
+      "eventProfilePhoto": "https://images.pexels.com/photos/1142987/pexels-photo-1142987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "eventGalleryOne": "gallery_one.jpg",
       "eventGalleryTwo": "gallery_two.jpg",
       "eventGalleryThree": "gallery_three.jpg",

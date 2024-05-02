@@ -116,7 +116,7 @@ const createdEvents = () => {
 .profile__info fieldset {
   display: flex;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 8rem;
 }
 
 .profile__info h1 {
