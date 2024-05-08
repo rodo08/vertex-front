@@ -66,5 +66,73 @@
       "eventGalleryThree": "gallery_three.jpg",
       "score": 5
     }
+  ],
+  "dataPrev": [
+    {
+      "id": "1",
+      "eventDate": "2024-04-29",
+      "eventLocation": "Chicago",
+      "eventDescription": "An exciting tech conference",
+      "eventProfilePhoto": "https://images.pexels.com/photos/12903917/pexels-photo-12903917.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "2",
+      "eventDate": "2024-08-29",
+      "eventLocation": "New York",
+      "eventDescription": "test 1",
+      "eventProfilePhoto": "https://images.pexels.com/photos/4457973/pexels-photo-4457973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "3",
+      "eventDate": "2024-09-29",
+      "eventLocation": "Texas",
+      "eventDescription": "test 2",
+      "eventProfilePhoto": "https://images.pexels.com/photos/17376952/pexels-photo-17376952/free-photo-of-giant-yellow-chicken-toy-with-top-hat-sitting-on-bench.jpeg",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "4",
+      "eventDate": "2024-04-29",
+      "eventLocation": "Chicago",
+      "eventDescription": "An exciting tech conference",
+      "eventProfilePhoto": "https://images.pexels.com/photos/14892223/pexels-photo-14892223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "5",
+      "eventDate": "2024-08-29",
+      "eventLocation": "New York",
+      "eventDescription": "test 1",
+      "eventProfilePhoto": "https://images.pexels.com/photos/4806517/pexels-photo-4806517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    },
+    {
+      "id": "6",
+      "eventDate": "2024-09-29",
+      "eventLocation": "Texas",
+      "eventDescription": "test 2",
+      "eventProfilePhoto": "https://images.pexels.com/photos/18638955/pexels-photo-18638955/free-photo-of-person-in-alien-mask-sitting-in-bed-and-reading-book.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "eventGalleryOne": "gallery_one.jpg",
+      "eventGalleryTwo": "gallery_two.jpg",
+      "eventGalleryThree": "gallery_three.jpg",
+      "score": 5
+    }
   ]
 }

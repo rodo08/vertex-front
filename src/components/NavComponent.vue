@@ -9,10 +9,17 @@ import IconSettings from './icons/IconSettings.vue'
 import IconCalendar from './icons/IconCalendar.vue'
 import IconClock from './icons/IconClock.vue'
 import IconLogOut from './icons/IconLogOut.vue'
+import { handleBackToHome } from '../assets/utils/utils'
+import router from '@/router/routes'
+import IconMenu from './icons/IconMenu.vue'
+import IconClose from './icons/IconClose.vue'
+
 const isVisible = ref(false)
+const iconVisibility = ref(true)
 
 const toggleVisibility = () => {
   isVisible.value = !isVisible.value
+  iconVisibility.value = !iconVisibility.value
 }
 </script>
 
@@ -20,27 +27,18 @@ const toggleVisibility = () => {
   <header>
     <nav>
       <div>
-        <img src="../../src/assets/vertex_horizontal-01.svg" width="150" alt="" @click="home" />
+        <img
+          src="../../src/assets/vertex_horizontal-01.svg"
+          width="150"
+          alt=""
+          @click="handleBackToHome(router)"
+        />
       </div>
       <div class="menu">
         <!-- <button class="toggle-button" @click="toggleMenu">✨</button> -->
         <button class="toggle-button" @click="toggleVisibility">
-          <svg
-            class="w-6 h-6 text-gray-800 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-width="2"
-              d="M5 7h14M5 12h14M5 17h14"
-            />
-          </svg>
+          <IconMenu v-if="iconVisibility" />
+          <IconClose v-else />
         </button>
         <ul v-show="isVisible" class="toggle-menu-list">
           <li>
@@ -172,6 +170,9 @@ button {
 svg {
   color: white;
 }
+.menu {
+  display: flex;
+}
 
 .toggle-menu-list {
   display: flex;
@@ -185,6 +186,7 @@ svg {
   background-color: #f7dcfb;
   z-index: 999;
   box-shadow: 3px 3px 3px rgba(93, 2, 116, 0.5);
+  margin-top: 1.3em;
   li a {
     color: #762882;
   }

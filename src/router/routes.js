@@ -23,9 +23,19 @@ const router = createRouter({
       component: () => import('../views/UserView.vue')
     },
     {
+      path: '/create-event',
+      name: 'create-event',
+      component: () => import('../views/CreateNewEventView.vue')
+    },
+    {
       path: '/created-events',
       name: 'created-events',
       component: () => import('../views/CreatedEventsView.vue')
+    },
+    {
+      path: '/past-events',
+      name: 'past-events',
+      component: () => import('../views/PastEventsView.vue')
     },
     {
       path: '/holi',

@@ -32,26 +32,26 @@ const year = new Date().getFullYear()
       <div class="footer__links">
         <ul>
           <li>
-            <a href="" target="_blank"><h3>Your Privacy Choices</h3></a>
+            <RouterLink to="/holi">Your Privacy Choices</RouterLink>
           </li>
           <li>
-            <a href="" target="_blank"><h3>Terms of Use</h3></a>
+            <RouterLink to="/holi">Terms of Use</RouterLink>
           </li>
           <li>
-            <a href="" target="_blank"><h3>Partners</h3></a>
+            <RouterLink to="/holi">Partners</RouterLink>
           </li>
         </ul>
       </div>
       <div class="footer__links">
         <ul>
           <li>
-            <a href="" target="_blank"><h3>Health & Safety</h3></a>
+            <RouterLink to="/holi">Health & Safety</RouterLink>
           </li>
           <li>
-            <a href="" target="_blank"><h3>Privacy Policy</h3></a>
+            <RouterLink to="/holi">Privacy Policy</RouterLink>
           </li>
           <li>
-            <a href="/holi" target="_blank"><h3>Contact</h3></a>
+            <RouterLink to="/holi">Contact</RouterLink>
           </li>
         </ul>
       </div>
@@ -81,7 +81,6 @@ const year = new Date().getFullYear()
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  justify-items: center;
   margin: 0 auto;
   grid-gap: 1rem;
   max-width: 1080px;
@@ -105,11 +104,9 @@ li {
 .footer__copyright {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .footer__copyright p {
-  text-align: center;
   margin: 0;
   font-weight: bold;
   color: #4e1057;
@@ -134,6 +131,10 @@ li {
 
 .footer p strong {
   font-weight: bolder;
+}
+.footer__links {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .footer__links h3 {

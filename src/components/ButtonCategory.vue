@@ -42,8 +42,6 @@ defineProps({
 .category-button svg {
   width: 20px;
 }
-.category-button svg:hover {
-}
 
 h1 {
   font-family: 'Nunito Sans', sans-serif;
