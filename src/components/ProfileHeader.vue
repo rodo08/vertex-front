@@ -11,6 +11,14 @@ const createdEvents = () => {
   router.push('/created-events')
   console.log('test')
 }
+const createEvents = () => {
+  router.push('/create-event')
+  console.log('test')
+}
+const pastEvents = () => {
+  router.push('/past-events')
+  console.log('test')
+}
 </script>
 
 <template>
@@ -34,6 +42,7 @@ const createdEvents = () => {
             eventParagraph="Share with everyone the details of your event and get people excited! Fill out the form to promote
         your upcoming event."
             buttonText="Make an Event"
+            :handleClick="createEvents"
           />
         </li>
         <li class="event-list__item">
@@ -49,6 +58,7 @@ const createdEvents = () => {
             eventTitle="Event Participation"
             eventParagraph="Relive past events. Browse through your attendance history, manage RSVPs, and even share your experiences."
             buttonText="Attended Events"
+            :handleClick="pastEvents"
           />
         </li>
         <li class="event-list__item">
@@ -116,7 +126,8 @@ const createdEvents = () => {
 .profile__info fieldset {
   display: flex;
   align-items: center;
-  margin-top: 8rem;
+  margin-top: 3.5rem;
+  height: 160px;
 }
 
 .profile__info h1 {
@@ -140,7 +151,6 @@ const createdEvents = () => {
   width: 100%;
   padding: 1rem 0;
 }
-
 .event-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -152,6 +162,18 @@ const createdEvents = () => {
   justify-content: space-evenly;
   padding-bottom: 4rem;
 }
+.profile-aside__dashboard__icon {
+  transition:
+    filter 0.3s ease-in,
+    color 0.3s ease-in;
+}
+.profile-aside__dashboard__icon:hover {
+  filter: drop-shadow(3px 3px 3px rgba(255, 166, 0, 0.5));
+  h2,
+  svg {
+    color: #ff00e1;
+  }
+}
 .profile-aside__dashboard__icon a {
   display: flex;
   align-items: center;
@@ -159,7 +181,7 @@ const createdEvents = () => {
 }
 .profile-aside__dashboard__icon h2 {
   font-size: 1.5rem;
-  color: #ff00e1;
+  color: #762882;
 }
 
 .profile-aside__dashboard__icon a svg {

@@ -1,13 +1,10 @@
 <script setup>
-import Button from '../components/MainButton.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { handleBackToHome, handleGoToPersonalInfo } from '@/assets/utils/utils'
+import Button from '../components/MainButton.vue'
 
 const router = useRouter()
-
-const personalInfo = () => {
-  router.push('personal-information')
-}
 
 const username = ref('')
 const email = ref('')
@@ -70,13 +67,13 @@ const submitForm = () => {
             <Button
               text="Cancel"
               color="purple"
-              @click="personalInfo"
+              @click="handleBackToHome(router)"
               class="registration-form__button"
             />
             <Button
               text="Register"
               color="pink"
-              @click="personalInfo"
+              @click="handleGoToPersonalInfo(router)"
               class="registration-form__button"
             />
           </div>

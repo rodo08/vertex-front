@@ -1,6 +1,7 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import FooterComponent from './components/FooterComponent.vue'
+//import CreateNewEventView from './views/CreateNewEventView.vue'
 </script>
 
 <template>

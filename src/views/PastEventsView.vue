@@ -18,8 +18,9 @@ const eventValue = ref('')
 
 const getData = async () => {
   try {
-    const { data } = await axios.get(`http://localhost:3001/data`)
+    const { data } = await axios.get(`http://localhost:3001/dataPrev`)
     console.log(data)
+
     eventValue.value = data
   } catch (error) {
     console.log(error)
