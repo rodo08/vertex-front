@@ -1,10 +1,17 @@
 <script setup>
+import { defineProps } from 'vue'
 import { useRouter } from 'vue-router'
 import DashBoardField from './DashBoardField.vue'
 import IconCalendar from './icons/IconCalendar.vue'
 import IconConnections from './icons/IconConnections.vue'
 import IconChats from './icons/IconChats.vue'
 import IconSettings from './icons/IconSettings.vue'
+
+defineProps({
+  nickName: String,
+  points: Number,
+  img: String
+})
 
 const router = useRouter()
 const createdEvents = () => {
@@ -25,12 +32,12 @@ const pastEvents = () => {
   <main class="main-profile">
     <section class="profile">
       <div class="profile__image">
-        <img src="../assets/pretty.png" alt="user image" />
+        <img :src="img" alt="user image" />
       </div>
       <div class="profile__info">
         <fieldset>
-          <h1>Calamardo</h1>
-          <h2>Level 8</h2>
+          <h1>{{ nickName }}</h1>
+          <h2>Tienes {{ points }} puntos</h2>
         </fieldset>
       </div>
     </section>
@@ -60,9 +67,6 @@ const pastEvents = () => {
             buttonText="Attended Events"
             :handleClick="pastEvents"
           />
-        </li>
-        <li class="event-list__item">
-          <MainButton text="Event participation" color="pink" />
         </li>
       </ul>
       <ul class="profile-aside__dashboard">
@@ -112,7 +116,7 @@ const pastEvents = () => {
 .profile__image {
   position: absolute;
   padding-top: 2rem;
-  left: calc(15% - 100px);
+  left: calc(11% - 100px);
 }
 .profile__image img {
   width: 200px;

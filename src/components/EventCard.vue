@@ -3,10 +3,10 @@ import { defineProps } from 'vue'
 
 defineProps({
   eventTitle: String,
-  eventDate: Date,
+  eventDate: String,
+  eventTime: String,
   eventImg: String
 })
-//https://buffer.com/library/content/images/2023/10/free-images.jpg
 </script>
 
 <template>
@@ -16,7 +16,7 @@ defineProps({
         <div class="event__data">
           <fieldset>
             <h1 class="card__event-data__title">{{ eventTitle }}</h1>
-            <p class="card__event-data__date">{{ eventDate }}</p>
+            <p class="card__event-data__date">{{ eventDate }} | {{ eventTime }}</p>
           </fieldset>
         </div>
         <img :src="eventImg" alt="event picture" class="card__event-data__img" />

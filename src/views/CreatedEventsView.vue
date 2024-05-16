@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import axios from 'axios'
+//import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import EventCard from '../components/EventCard.vue'
 import Button from '../components/MainButton.vue'
@@ -11,21 +11,31 @@ import IconSports from '../components/icons/IconSports.vue'
 import IconOnline from '../components/icons/IconOnline.vue'
 import IconFriends from '../components/icons/IconFriends.vue'
 import IconSupport from '../components/icons/IconSupport.vue'
-import { handleGoToUser } from '@/assets/utils/utils.js'
+import { handleGoToUser, getData } from '@/assets/utils/utils.js'
 import router from '@/router/routes'
 
 const eventValue = ref('')
-
-const getData = async () => {
+// const getData = async () => {
+//   try {
+//     const { data } = await axios.get(`http://localhost:3001/events`)
+//     console.log(data)
+//     eventValue.value = data
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+// getData()
+;(async () => {
   try {
-    const { data } = await axios.get(`http://localhost:3001/data`)
-    console.log(data)
-    eventValue.value = data
+    const eventsData = await getData('http://localhost:3001/events')
+    console.log(eventsData)
+    // Manipular los datos de eventos
+    eventValue.value = eventsData
   } catch (error) {
-    console.log(error)
+    console.error(error)
+    // Manejar el error
   }
-}
-getData()
+})()
 //form - search
 const search = ref('')
 
@@ -52,7 +62,7 @@ const handleEventCard = () => {
         placeholder="Search between events"
         class="search-query__input"
       />
-      <Button text="Search" color="purple" @click="personalInfo" class="search-query__button" />
+      <Button text="Search" color="purple" class="search-query__button" />
     </form>
   </section>
   <section class="subjects">
@@ -92,9 +102,10 @@ const handleEventCard = () => {
         @click="handleEventCard"
       >
         <EventCard
-          :eventTitle="event.eventDescription"
-          :eventDate="event.eventDate"
-          :eventImg="event.eventProfilePhoto"
+          :eventTitle="event.titulo"
+          :eventDate="event.fechaEvento"
+          :event-time="event.horaEvento"
+          :eventImg="event.fotoEventoPerfil"
         />
       </li>
     </ul>

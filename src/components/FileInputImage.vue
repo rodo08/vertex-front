@@ -1,6 +1,10 @@
 <script setup>
 import { defineProps, ref } from 'vue'
 
+import { defineEmits } from 'vue'
+
+const emits = defineEmits(['change'])
+
 const { imageProp, textProp } = defineProps({
   imageProp: {
     type: String,
@@ -20,6 +24,7 @@ const openFileInput = () => {
 }
 
 const onFileChange = (event) => {
+  emits('change')
   const file = event.target.files[0]
   if (file) {
     const reader = new FileReader()

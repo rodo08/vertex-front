@@ -1,138 +1,94 @@
 {
-  "data": [
+  "events": [
     {
-      "id": "1",
-      "eventDate": "2024-04-29",
-      "eventLocation": "Chicago",
-      "eventDescription": "An exciting tech conference",
-      "eventProfilePhoto": "https://buffer.com/library/content/images/2023/10/free-images.jpg",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
+      "id": 1,
+      "titulo": "Title",
+      "fechaEvento": "2024-05-15",
+      "horaEvento": "15:30",
+      "localidadEvento": "Ciudad 1",
+      "descripcionEvento": "Descripción del evento",
+      "fotoEventoPerfil": "https://buffer.com/library/content/images/2023/10/free-images.jpg",
+      "galeriaEventoUno": "ruta/a/la/galeria1.jpg",
+      "galeriaEventoDos": "ruta/a/la/galeria2.jpg",
+      "galeriaEventoTres": "ruta/a/la/galeria3.jpg",
+      "puntuacion": 5,
+      "users": {
+        "id": 1,
+        "nombre": "Nombre del usuario",
+        "email": "usuario@example.com"
+      }
     },
     {
-      "id": "2",
-      "eventDate": "2024-08-29",
-      "eventLocation": "New York",
-      "eventDescription": "test 1",
-      "eventProfilePhoto": "https://images.pexels.com/photos/22839356/pexels-photo-22839356/free-photo-of-25-april-bridge.jpeg",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
-    {
-      "id": "3",
-      "eventDate": "2024-09-29",
-      "eventLocation": "Texas",
-      "eventDescription": "test 2",
-      "eventProfilePhoto": "https://images.pexels.com/photos/1142987/pexels-photo-1142987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
-    {
-      "id": "4",
-      "eventDate": "2024-04-29",
-      "eventLocation": "Chicago",
-      "eventDescription": "An exciting tech conference",
-      "eventProfilePhoto": "https://buffer.com/library/content/images/2023/10/free-images.jpg",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
-    {
-      "id": "5",
-      "eventDate": "2024-08-29",
-      "eventLocation": "New York",
-      "eventDescription": "test 1",
-      "eventProfilePhoto": "https://images.pexels.com/photos/22839356/pexels-photo-22839356/free-photo-of-25-april-bridge.jpeg",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
-    {
-      "id": "6",
-      "eventDate": "2024-09-29",
-      "eventLocation": "Texas",
-      "eventDescription": "test 2",
-      "eventProfilePhoto": "https://images.pexels.com/photos/1142987/pexels-photo-1142987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
+      "id": 2,
+      "titulo": "Title",
+      "fechaEvento": "2024-05-15",
+      "horaEvento": "15:30",
+      "localidadEvento": "Ciudad 2",
+      "descripcionEvento": "Descripción del evento",
+      "fotoEventoPerfil": "https://images.pexels.com/photos/1154189/pexels-photo-1154189.jpeg",
+      "galeriaEventoUno": "ruta/a/la/galeria1.jpg",
+      "galeriaEventoDos": "ruta/a/la/galeria2.jpg",
+      "galeriaEventoTres": "ruta/a/la/galeria3.jpg",
+      "puntuacion": 5,
+      "users": {
+        "id": 1,
+        "nombre": "Nombre del usuario",
+        "email": "usuario@example.com"
+      }
     }
   ],
-  "dataPrev": [
+  "events_history": [
     {
-      "id": "1",
-      "eventDate": "2024-04-29",
-      "eventLocation": "Chicago",
-      "eventDescription": "An exciting tech conference",
-      "eventProfilePhoto": "https://images.pexels.com/photos/12903917/pexels-photo-12903917.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
+      "id": 1,
+      "titulo": "Title",
+      "fechaEvento": "2024-05-15",
+      "horaEvento": "15:30",
+      "localidadEvento": "Ciudad 1",
+      "descripcionEvento": "Descripción del evento",
+      "fotoEventoPerfil": "https://buffer.com/library/content/images/2023/10/free-images.jpg",
+      "galeriaEventoUno": "ruta/a/la/galeria1.jpg",
+      "galeriaEventoDos": "ruta/a/la/galeria2.jpg",
+      "galeriaEventoTres": "ruta/a/la/galeria3.jpg",
+      "puntuacion": 5,
+      "users": {
+        "id": 1,
+        "nombre": "Nombre del usuario",
+        "email": "usuario@example.com"
+      }
     },
     {
-      "id": "2",
-      "eventDate": "2024-08-29",
-      "eventLocation": "New York",
-      "eventDescription": "test 1",
-      "eventProfilePhoto": "https://images.pexels.com/photos/4457973/pexels-photo-4457973.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
+      "id": 2,
+      "titulo": "Title",
+      "fechaEvento": "2024-05-15",
+      "horaEvento": "15:30",
+      "localidadEvento": "Ciudad 2",
+      "descripcionEvento": "Descripción del evento",
+      "fotoEventoPerfil": "https://images.pexels.com/photos/1154189/pexels-photo-1154189.jpeg",
+      "galeriaEventoUno": "ruta/a/la/galeria1.jpg",
+      "galeriaEventoDos": "ruta/a/la/galeria2.jpg",
+      "galeriaEventoTres": "ruta/a/la/galeria3.jpg",
+      "puntuacion": 5,
+      "users": {
+        "id": 1,
+        "nombre": "Nombre del usuario",
+        "email": "usuario@example.com"
+      }
+    }
+  ],
+  "users": [
     {
-      "id": "3",
-      "eventDate": "2024-09-29",
-      "eventLocation": "Texas",
-      "eventDescription": "test 2",
-      "eventProfilePhoto": "https://images.pexels.com/photos/17376952/pexels-photo-17376952/free-photo-of-giant-yellow-chicken-toy-with-top-hat-sitting-on-bench.jpeg",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
-    {
-      "id": "4",
-      "eventDate": "2024-04-29",
-      "eventLocation": "Chicago",
-      "eventDescription": "An exciting tech conference",
-      "eventProfilePhoto": "https://images.pexels.com/photos/14892223/pexels-photo-14892223.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
-    {
-      "id": "5",
-      "eventDate": "2024-08-29",
-      "eventLocation": "New York",
-      "eventDescription": "test 1",
-      "eventProfilePhoto": "https://images.pexels.com/photos/4806517/pexels-photo-4806517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
-    },
-    {
-      "id": "6",
-      "eventDate": "2024-09-29",
-      "eventLocation": "Texas",
-      "eventDescription": "test 2",
-      "eventProfilePhoto": "https://images.pexels.com/photos/18638955/pexels-photo-18638955/free-photo-of-person-in-alien-mask-sitting-in-bed-and-reading-book.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "eventGalleryOne": "gallery_one.jpg",
-      "eventGalleryTwo": "gallery_two.jpg",
-      "eventGalleryThree": "gallery_three.jpg",
-      "score": 5
+      "id": 1,
+      "nickName": "usuario123",
+      "email": "usuario123@example.com",
+      "password": "contrasena123",
+      "gender": "female",
+      "ocupation": "developer",
+      "hobbies": "programming, reading",
+      "sport": "football",
+      "description": "A passionate developer who loves programming and reading books.",
+      "profileImage": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+      "eventos": [],
+      "points": 8
     }
   ]
 }
