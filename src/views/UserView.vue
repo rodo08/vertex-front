@@ -1,19 +1,38 @@
 <script setup>
 //import { useRouter } from 'vue-router'
 // eslint-disable-next-line no-unused-vars
+import { ref } from 'vue'
 import NavComponent from '../components/NavComponent.vue'
-import ProfileHeader from '../components/ProfileHeader.vue'
+import UserProfileComponent from '../components/UserProfileComponent.vue'
+import { getData } from '@/assets/utils/utils.js'
 
 // const router = useRouter()
 // const home = () => {
 //   router.push('/')
 // }
+const userValue = ref([])
+
+;(async () => {
+  try {
+    const usersData = await getData('http://localhost:3001/users')
+    console.log(usersData[0])
+    // Manipular los datos de eventos
+    userValue.value = usersData[0]
+  } catch (error) {
+    console.error(error)
+    // Manejar el error
+  }
+})()
 </script>
 
 <template>
   <NavComponent />
   <section>
-    <ProfileHeader />
+    <UserProfileComponent
+      :img="userValue.profileImage"
+      :nickName="userValue.nickName"
+      :points="userValue.points"
+    />
   </section>
 </template>
 
