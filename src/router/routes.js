@@ -38,6 +38,11 @@ const router = createRouter({
       component: () => import('../views/PastEventsView.vue')
     },
     {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginFormView.vue')
+    },
+    {
       path: '/holi',
       name: 'holi',
       component: () => import('../views/HoliHoli.vue')

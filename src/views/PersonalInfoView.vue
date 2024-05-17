@@ -80,7 +80,7 @@ const onFileChange = (imageUrl) => {
       ></textarea>
       <div class="personal-info__register-buttons">
         <Button color="purple" text="Cancel" @click="handleBackToHome(router)" />
-        <Button color="purple" text="Save" @click="handleGoToUser(router)" />
+        <Button color="pink" text="Save" @click="handleGoToUser(router)" />
       </div>
     </form>
   </main>

@@ -124,9 +124,9 @@ const submitForm = () => {
 .registration-form__input {
   height: 2.5rem;
   margin-bottom: 1rem;
-  border-radius: 5px;
   padding: 0.5rem;
-  border: 1px solid #6c4c67;
+  /* border-radius: 5px;
+  border: 1px solid #6c4c67; */
 }
 
 .registration-form__title {
