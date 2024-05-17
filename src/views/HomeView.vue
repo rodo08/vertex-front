@@ -7,6 +7,10 @@ const router = useRouter()
 const register = () => {
   router.push('/register')
 }
+
+const login = () => {
+  router.push('/login')
+}
 </script>
 
 <template>
@@ -23,7 +27,7 @@ const register = () => {
           your event planning and management with our intuitive, all-in-one web app.
         </p>
         <div class="home__buttons">
-          <Button text="Login" color="purple" />
+          <Button text="Login" color="purple" @click="login" />
           <Button text="Register" color="pink" @click="register" />
         </div>
         <div class="home__legal-disclaim">

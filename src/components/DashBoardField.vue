@@ -48,10 +48,10 @@ button {
   color: #fff;
   background-color: #ce08a0;
   width: fit-content;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   align-self: flex-end;
   border: 1px solid #6d1158;
-  border-radius: 0.2rem;
+  border-radius: 20px;
   transition: background-color 0.3s ease;
 }
 button:hover {
