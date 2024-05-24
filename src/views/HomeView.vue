@@ -2,6 +2,12 @@
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
 import ImageGrid from '../components/ImageGrid.vue'
+// import { useCounterStore } from '../stores/counter'
+// import { storeToRefs } from 'pinia'
+
+// const useCounter = useCounterStore()
+// const { increment } = useCounter
+// const { count, double } = storeToRefs(useCounter)
 
 const router = useRouter()
 const register = () => {
@@ -14,14 +20,19 @@ const login = () => {
 </script>
 
 <template>
+  <!-- EJEMPLO DE PINIA -->
+  <!-- <h1>home counter: {{ count }}</h1>
+  <h1>home double: {{ double }}</h1>
+  <button @click="increment">Increment</button> -->
+  <!-- EJEMPLO DE PINIA -->
   <main class="home__main">
     <section class="home__section">
       <div class="home__section__image-wrapper">
         <ImageGrid />
       </div>
       <div class="home__section__content">
-        <img src="../assets/vertexlogopink.svg" width="150" alt="Vertex logo" />
         <h1>Welcome to Vertex</h1>
+        <img src="../assets/vertexlogopink.svg" width="150" alt="Vertex logo" />
         <p>
           Empower Your Events: Create, Manage, and Deliver Exceptional Experiences. Take control of
           your event planning and management with our intuitive, all-in-one web app.

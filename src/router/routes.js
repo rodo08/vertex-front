@@ -46,6 +46,16 @@ const router = createRouter({
       path: '/holi',
       name: 'holi',
       component: () => import('../views/HoliHoli.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/404View.vue')
+    },
+    {
+      path: '/event-detail',
+      name: 'event-detail',
+      component: () => import('../views/EventDetailView.vue')
     }
   ]
 })
