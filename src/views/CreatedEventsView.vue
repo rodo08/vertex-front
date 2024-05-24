@@ -27,7 +27,7 @@ const eventValue = ref('')
 // getData()
 ;(async () => {
   try {
-    const eventsData = await getData('http://localhost:3001/events')
+    const eventsData = await getData('http://localhost:4000/events')
     console.log(eventsData)
     // Manipular los datos de eventos
     eventValue.value = eventsData

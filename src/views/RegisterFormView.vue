@@ -1,24 +1,29 @@
 <script setup>
+//import { useUserStore } from '@/stores/user'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { handleBackToHome, handleGoToPersonalInfo } from '@/assets/utils/utils'
+import { handleBackToHome } from '@/assets/utils/utils'
 import Button from '../components/MainButton.vue'
+import axios from 'axios'
 
 const router = useRouter()
 
-const username = ref('')
 const email = ref('')
 const password = ref('')
-const confirm = ref('')
 
-const submitForm = () => {
-  const formData = {
-    username: username.value,
-    email: email.value,
-    password: password.value,
-    confirm: confirm.value
+const handleRegister = async () => {
+  try {
+    const response = await axios.post('http://localhost:3001/register', {
+      email: email.value,
+      password: password.value
+    })
+    //console.log(email.value, password.value)
+    console.log('register Ok')
+    console.log(response)
+    //router.push('/user')
+  } catch (error) {
+    console.error(error)
   }
-  console.log('Form data:', formData)
 }
 </script>
 
@@ -28,54 +33,23 @@ const submitForm = () => {
       <img src="../assets/vertexlogopink.svg" width="250" alt="logo vertex" />
     </div>
     <div class="registration-form__form-container">
-      <form @submit.prevent="submitForm" class="registration-form__form">
+      <form @submit.prevent="handleRegister" class="registration-form__form">
         <h1 class="registration-form__title">Register</h1>
-        <label for="username" class="registration-form__label">Username</label>
-        <input
-          v-model="username"
-          id="username"
-          type="text"
-          placeholder="Your username"
-          class="registration-form__input"
-        />
         <label for="email" class="registration-form__label">Email</label>
-        <input
-          v-model="email"
-          id="email"
-          type="email"
-          placeholder="Your email"
-          class="registration-form__input"
-        />
+        <input id="email" type="email" placeholder="Enter email" v-model.trim="email" />
+
         <label for="password" class="registration-form__label">Password</label>
-        <input
-          v-model="password"
-          id="password"
-          type="password"
-          placeholder="Your password"
-          class="registration-form__input"
-        />
-        <label for="confirm" class="registration-form__label">Confirm password</label>
-        <input
-          v-model="confirm"
-          id="confirm"
-          type="password"
-          placeholder="Confirm your password"
-          class="registration-form__input"
-        />
+        <input id="password" type="password" placeholder="Enter password" v-model.trim="password" />
         <div class="registration-form__call-to-action">
           <div class="registration-form__buttons">
             <Button
+              type="button"
               text="Cancel"
               color="purple"
               @click="handleBackToHome(router)"
               class="registration-form__button"
             />
-            <Button
-              text="Register"
-              color="pink"
-              @click="handleGoToPersonalInfo(router)"
-              class="registration-form__button"
-            />
+            <Button text="Register" color="pink" class="registration-form__button" />
           </div>
           <p class="registration-form__link">
             Already have an account? <a href=""><strong>Login</strong></a>
@@ -119,6 +93,8 @@ const submitForm = () => {
 .registration-form__label {
   font-weight: bold;
   color: #4e1057;
+  padding: 0 0 0 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .registration-form__input {
@@ -131,7 +107,7 @@ const submitForm = () => {
 
 .registration-form__title {
   margin: 0;
-  padding: 0 0 1rem 0;
+  padding: 0 0 4rem 0;
   font-size: 4rem;
   color: #4e1057;
 }

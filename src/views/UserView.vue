@@ -14,7 +14,7 @@ const userValue = ref([])
 
 ;(async () => {
   try {
-    const usersData = await getData('http://localhost:3001/users')
+    const usersData = await getData('http://localhost:4000/users')
     console.log(usersData[0])
     // Manipular los datos de eventos
     userValue.value = usersData[0]

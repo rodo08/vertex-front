@@ -63,6 +63,7 @@ const year = new Date().getFullYear()
 <style scoped>
 .footer {
   width: 100%;
+  padding: 2rem 0 0 0;
 }
 .footer svg,
 .footer a {
@@ -116,7 +117,6 @@ li {
 .footer__socials {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 .footer__socials__icons {
   display: flex;

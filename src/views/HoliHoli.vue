@@ -1,6 +1,12 @@
+<script setup>
+import { useUserStore } from '../stores/user'
+
+const userStore = useUserStore()
+</script>
+
 <template>
   <section class="holi">
-    <h1>holi ❤</h1>
+    <h1>holi {{ userStore.capsLk }} ❤</h1>
     <div>⢀⣤⣶⣶⣦⣄⡀</div>
     <div>⢀⣼⣿⣿⣿⣿⣯⣿⣿⣦</div>
     <div>⢀⣾⣷⣿⣿⣿⣿⡇⢿⣿⣿⣇</div>

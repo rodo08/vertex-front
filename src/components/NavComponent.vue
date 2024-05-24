@@ -13,6 +13,9 @@ import { handleBackToHome } from '../assets/utils/utils'
 import router from '@/router/routes'
 import IconMenu from './icons/IconMenu.vue'
 import IconClose from './icons/IconClose.vue'
+import { useUserStore } from '@/stores/user'
+
+const userStore = useUserStore()
 
 const isVisible = ref(false)
 const iconVisibility = ref(true)
@@ -94,7 +97,7 @@ const toggleVisibility = () => {
           <li>
             <a href="#"
               ><IconLogOut />
-              <h2>Logout</h2>
+              <h2 @click="userStore.logoutUser">Logout</h2>
             </a>
           </li>
         </ul>
