@@ -40,109 +40,23 @@
   "events_history": [],
   "users": [
     {
-      "id": "76dd",
-      "nickName": "usuario123",
-      "email": "test1@dd.cd",
-      "password": "123123",
-      "profileImage": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
-      "points": 8
-    },
-    {
-      "id": "f14c",
-      "email": "test1@dd.cd",
+      "id": "0bcf",
+      "email": "test@mail.com",
       "password": "123123"
     },
     {
-      "id": "8987",
-      "email": "test1@dd.cd",
-      "password": "123123"
-    },
-    {
-      "id": "d603",
-      "email": "test1@dd.cd",
-      "password": "123123"
-    },
-    {
-      "id": "201d",
-      "email": "mail@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "4653",
-      "email": "adasds@asd.com",
-      "password": "123123"
-    },
-    {
-      "id": "203c",
-      "email": "prueba@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "8dcf",
-      "email": "prueba@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "3f60",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "9c1f",
-      "email": "mail@ad.com",
-      "password": "asdasdassd"
-    },
-    {
-      "id": "ea12",
-      "email": "fauto@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "b844",
-      "email": "test5@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "9fd5",
-      "email": "marco@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "0938",
-      "email": "rodkatansky@gmail.com",
-      "password": "123123"
-    },
-    {
-      "id": "73f1",
-      "email": "fausto@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "210a",
-      "email": "fausto@mail.com",
-      "password": "123123"
-    },
-    {
-      "id": "b7b9",
+      "id": "fb1e",
       "email": "asd@asd.com",
       "password": "123123"
     },
     {
-      "id": "ec3d",
-      "email": "asd@asd.com",
+      "id": "0840",
+      "email": "asd2@asd.com",
       "password": "123123"
     },
     {
-      "id": "f63d",
-      "email": "fausto@mail.com",
-      "password": "123123",
-      "eventos:": {
-        "evento1": []
-      }
-    },
-    {
-      "id": "8f14",
-      "email": "asd@asd.com",
+      "id": "0b67",
+      "email": "asd5@asd.com",
       "password": "123123"
     }
   ]
