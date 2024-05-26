@@ -1,5 +1,4 @@
 <script setup>
-//import { useUserStore } from '@/stores/user'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { handleBackToHome } from '@/assets/utils/utils'
@@ -17,11 +16,19 @@ const handleRegister = async () => {
       email: email.value,
       password: password.value
     })
-    //console.log(email.value, password.value)
-    console.log('register Ok')
+    alert('register Ok')
     console.log(response)
     //router.push('/user')
   } catch (error) {
+    if (error.response && error.response.data.error) {
+      if (error.response.data.error === 'Email already exists') {
+        alert('The email you have entered is already registered.')
+      } else {
+        alert(error.response.data.error)
+      }
+    } else {
+      alert('An error occurred')
+    }
     console.error(error)
   }
 }
