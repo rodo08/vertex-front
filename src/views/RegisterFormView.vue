@@ -3,22 +3,25 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { handleBackToHome } from '@/assets/utils/utils'
 import Button from '../components/MainButton.vue'
+import ImageGrid from '@/components/ImageGrid.vue'
 import axios from 'axios'
 
+const registerURL = 'http://localhost:4000/auth/register'
 const router = useRouter()
-
+const username = ref('')
 const email = ref('')
 const password = ref('')
 
 const handleRegister = async () => {
   try {
-    const response = await axios.post('http://localhost:3001/register', {
+    const response = await axios.post(registerURL, {
+      username: username.value,
       email: email.value,
       password: password.value
     })
     alert('register Ok')
     console.log(response)
-    //router.push('/user')
+    router.push('/user')
   } catch (error) {
     if (error.response && error.response.data.error) {
       if (error.response.data.error === 'Email already exists') {
@@ -37,11 +40,20 @@ const handleRegister = async () => {
 <template>
   <section class="registration-form">
     <div class="registration-form__img-container">
-      <img src="../assets/vertexlogopink.svg" width="250" alt="logo vertex" />
+      <ImageGrid />
     </div>
     <div class="registration-form__form-container">
       <form @submit.prevent="handleRegister" class="registration-form__form">
         <h1 class="registration-form__title">Register</h1>
+
+        <label for="username" class="registration-form__label">Username</label>
+        <input
+          id="username"
+          type="text"
+          placeholder="Enter your username"
+          v-model.trim="username"
+        />
+
         <label for="email" class="registration-form__label">Email</label>
         <input id="email" type="email" placeholder="Enter email" v-model.trim="email" />
 
@@ -69,11 +81,15 @@ const handleRegister = async () => {
 
 <style scoped>
 .registration-form {
-  padding-top: 4rem;
+  padding-top: 6%;
   display: grid;
+  max-width: 1080px;
   justify-items: center;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  grid-gap: 4rem;
+  align-items: start;
 }
 
 .registration-form__img-container {

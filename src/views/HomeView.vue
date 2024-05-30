@@ -1,7 +1,10 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { ref } from 'vue'
 import Button from '../components/MainButton.vue'
 import ImageGrid from '../components/ImageGrid.vue'
+import LoaderComponent from '../components/LoaderComponent.vue'
+//import axios from 'axios'
 // import { useCounterStore } from '../stores/counter'
 // import { storeToRefs } from 'pinia'
 
@@ -14,6 +17,11 @@ const register = () => {
   router.push('/register')
 }
 
+const loading = ref(true)
+setTimeout(() => {
+  loading.value = false
+}, 2000)
+
 const login = () => {
   router.push('/login')
 }
@@ -22,20 +30,22 @@ const login = () => {
 <template>
   <!-- EJEMPLO DE PINIA -->
   <!-- <h1>home counter: {{ count }}</h1>
-  <h1>home double: {{ double }}</h1>
-  <button @click="increment">Increment</button> -->
+    <h1>home double: {{ double }}</h1>
+    <button @click="increment">Increment</button> -->
   <!-- EJEMPLO DE PINIA -->
   <main class="home__main">
     <section class="home__section">
       <div class="home__section__image-wrapper">
+        <div v-if="loading"><LoaderComponent /></div>
+
         <ImageGrid />
       </div>
       <div class="home__section__content">
-        <h1>Welcome to Vertex</h1>
         <img src="../assets/vertexlogopink.svg" width="150" alt="Vertex logo" />
+        <h1>Welcome to Vertex</h1>
         <p>
-          Empower Your Events: Create, Manage, and Deliver Exceptional Experiences. Take control of
-          your event planning and management with our intuitive, all-in-one web app.
+          <strong>Empower Your Events:</strong> Create, Manage, and Deliver Exceptional Experiences.
+          Take control of your event planning and management with our intuitive, all-in-one web app.
         </p>
         <div class="home__buttons">
           <Button text="Login" color="purple" @click="login" />
@@ -54,6 +64,10 @@ const login = () => {
 </template>
 
 <style scoped>
+strong {
+  font-weight: bolder;
+}
+
 .home__main {
   display: flex;
   flex-direction: column;

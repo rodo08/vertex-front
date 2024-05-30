@@ -28,9 +28,9 @@ const eventValue = ref('')
 ;(async () => {
   try {
     const eventsData = await getData('http://localhost:4000/events')
-    console.log(eventsData)
     // Manipular los datos de eventos
     eventValue.value = eventsData
+    console.log(eventsData)
   } catch (error) {
     console.error(error)
     // Manejar el error
@@ -102,9 +102,9 @@ const handleEventCard = () => {
         @click="handleEventCard"
       >
         <EventCard
-          :eventTitle="event.titulo"
+          :eventTitle="event.descripcionEvento"
           :eventDate="event.fechaEvento"
-          :event-time="event.horaEvento"
+          :event-time="event.localidadEvento"
           :eventImg="event.fotoEventoPerfil"
         />
       </li>
