@@ -22,7 +22,8 @@ const handleLogin = async () => {
     })
 
     console.log('login OK', response)
-    localStorage.setItem('loqueyoquiera', response.data.token)
+    localStorage.setItem('my token', response.data.token)
+    alert('Login OK')
     //router.push('/home')
   } catch (error) {
     console.error('Error en inicio de sesión: ', error)

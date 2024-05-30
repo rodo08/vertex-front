@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #333333;
+  background: #ffeffb;
   transition:
     opacity 0.75s,
     visibility 0.75s;
@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
   width: 75px;
   height: 75px;
   border: 15px solid #dddddd;
-  border-top-color: #009578;
+  border-top-color: #ff00e1;
   border-radius: 50%;
   animation: loading 0.75s ease infinite;
 }
