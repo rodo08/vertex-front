@@ -53,7 +53,7 @@ const toggleVisibility = () => {
           <li>
             <a href="#"
               ><IconProfile />
-              <h2>Profile</h2>
+              <RouterLink to="/personal-information"><h2>Profile</h2></RouterLink>
             </a>
           </li>
           <li>

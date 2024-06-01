@@ -1,38 +1,19 @@
 <script setup>
-//import { useRouter } from 'vue-router'
-// eslint-disable-next-line no-unused-vars
-import { ref } from 'vue'
+//import { ref, onMounted } from 'vue'
 import NavComponent from '../components/NavComponent.vue'
 import UserProfileComponent from '../components/UserProfileComponent.vue'
-import { getData } from '@/assets/utils/utils.js'
 
-// const router = useRouter()
-// const home = () => {
-//   router.push('/')
-// }
-const userValue = ref([])
+const userData = JSON.parse(localStorage.getItem('userData'))
+const username = userData.username
+const points = userData.events.length * 5
 
-;(async () => {
-  try {
-    const usersData = await getData('http://localhost:4000/users')
-    console.log(usersData[0])
-    // Manipular los datos de eventos
-    userValue.value = usersData[0]
-  } catch (error) {
-    console.error(error)
-    // Manejar el error
-  }
-})()
+console.log(points)
 </script>
 
 <template>
   <NavComponent />
   <section>
-    <UserProfileComponent
-      :img="userValue.profileImage"
-      :nickName="userValue.nickName"
-      :points="userValue.points"
-    />
+    <UserProfileComponent img="" :user="username" :points="points" />
   </section>
 </template>
 

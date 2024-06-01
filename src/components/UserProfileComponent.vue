@@ -8,9 +8,9 @@ import IconChats from './icons/IconChats.vue'
 import IconSettings from './icons/IconSettings.vue'
 
 defineProps({
-  nickName: String,
-  points: Number,
-  img: String
+  img: String,
+  user: String,
+  points: Number
 })
 
 const router = useRouter()
@@ -36,7 +36,7 @@ const pastEvents = () => {
       </div>
       <div class="profile__info">
         <fieldset>
-          <h1>{{ nickName }}</h1>
+          <h1>{{ user }}</h1>
           <h2>Tienes {{ points }} puntos</h2>
         </fieldset>
       </div>

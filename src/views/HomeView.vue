@@ -1,9 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import { ref } from 'vue'
 import Button from '../components/MainButton.vue'
 import ImageGrid from '../components/ImageGrid.vue'
-import LoaderComponent from '../components/LoaderComponent.vue'
 //import axios from 'axios'
 // import { useCounterStore } from '../stores/counter'
 // import { storeToRefs } from 'pinia'
@@ -16,11 +14,6 @@ const router = useRouter()
 const register = () => {
   router.push('/register')
 }
-
-const loading = ref(true)
-setTimeout(() => {
-  loading.value = false
-}, 2000)
 
 const login = () => {
   router.push('/login')
@@ -36,8 +29,6 @@ const login = () => {
   <main class="home__main">
     <section class="home__section">
       <div class="home__section__image-wrapper">
-        <div v-if="loading"><LoaderComponent /></div>
-
         <ImageGrid />
       </div>
       <div class="home__section__content">

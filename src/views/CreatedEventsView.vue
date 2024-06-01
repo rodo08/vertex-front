@@ -15,16 +15,7 @@ import { handleGoToUser, getData } from '@/assets/utils/utils.js'
 import router from '@/router/routes'
 
 const eventValue = ref('')
-// const getData = async () => {
-//   try {
-//     const { data } = await axios.get(`http://localhost:3001/events`)
-//     console.log(data)
-//     eventValue.value = data
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
-// getData()
+
 ;(async () => {
   try {
     const eventsData = await getData('http://localhost:4000/events')
