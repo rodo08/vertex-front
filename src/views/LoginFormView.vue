@@ -7,7 +7,6 @@ import axios from 'axios'
 import ImageGrid from '@/components/ImageGrid.vue'
 
 const router = useRouter()
-
 const username = ref('')
 const password = ref('')
 
@@ -15,16 +14,22 @@ const handleLogin = async () => {
   try {
     if (!username.value || !password.value) {
       alert('Username & Password are required')
+      return
     }
     const response = await axios.post('http://localhost:4000/auth/login', {
       username: username.value,
       password: password.value
     })
 
-    console.log('login OK', response)
-    localStorage.setItem('my token', response.data.token)
+    localStorage.setItem('userData', JSON.stringify(response.data))
+    localStorage.setItem('username', username.value)
+    console.log('Respuesta del backend al iniciar sesión:', response.data)
+    const token = response.data.token
+    localStorage.setItem('token', token)
+
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
     alert('Login OK')
-    //router.push('/home')
+    router.push('/user')
   } catch (error) {
     console.error('Error en inicio de sesión: ', error)
   }

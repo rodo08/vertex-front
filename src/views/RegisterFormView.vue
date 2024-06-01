@@ -21,7 +21,7 @@ const handleRegister = async () => {
     })
     alert('register Ok')
     console.log(response)
-    router.push('/user')
+    router.push('/login')
   } catch (error) {
     if (error.response && error.response.data.error) {
       if (error.response.data.error === 'Email already exists') {
