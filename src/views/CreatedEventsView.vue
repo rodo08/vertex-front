@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-//import axios from 'axios'
+import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import EventCard from '../components/EventCard.vue'
 import Button from '../components/MainButton.vue'
@@ -11,22 +11,36 @@ import IconSports from '../components/icons/IconSports.vue'
 import IconOnline from '../components/icons/IconOnline.vue'
 import IconFriends from '../components/icons/IconFriends.vue'
 import IconSupport from '../components/icons/IconSupport.vue'
-import { handleGoToUser, getData } from '@/assets/utils/utils.js'
+import { handleGoToUser } from '@/assets/utils/utils.js'
 import router from '@/router/routes'
 
-const eventValue = ref('')
+const userData = localStorage.getItem('userData')
+const userDataObject = JSON.parse(userData)
+const token = userDataObject.token
+const userId = userDataObject.id
+const getUserByIdURL = `http://localhost:4000/user/${userId}`
 
-;(async () => {
+const eventsList = ref({
+  eventTitle: '',
+  eventDate: '',
+  eventLocation: '',
+  eventImg: ''
+})
+
+const getUserById = async () => {
   try {
-    const eventsData = await getData('http://localhost:4000/events')
-    // Manipular los datos de eventos
-    eventValue.value = eventsData
-    console.log(eventsData)
+    const response = await axios.get(getUserByIdURL, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    eventsList.value = response.data.events
   } catch (error) {
-    console.error(error)
-    // Manejar el error
+    console.log(error)
   }
-})()
+}
+getUserById()
+
 //form - search
 const search = ref('')
 
@@ -87,16 +101,16 @@ const handleEventCard = () => {
   <section class="events">
     <ul class="events__cards">
       <li
-        v-for="event in eventValue"
-        v-bind:key="event.id"
+        v-for="event in eventsList"
+        v-bind:key="event.userId"
         class="events__cards-item"
         @click="handleEventCard"
       >
         <EventCard
-          :eventTitle="event.descripcionEvento"
-          :eventDate="event.fechaEvento"
-          :event-time="event.localidadEvento"
-          :eventImg="event.fotoEventoPerfil"
+          :eventTitle="event.eventTitle"
+          :eventDate="event.eventDate"
+          :event-time="event.eventLocation"
+          :eventImg="event.eventImg"
         />
       </li>
     </ul>
