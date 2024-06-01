@@ -124,7 +124,7 @@ const pastEvents = () => {
   border: 3px solid #ff00e1;
   border-radius: 50%;
   object-fit: cover;
-  background-color: aquamarine;
+  background-color: #762882;
   box-shadow: 3px 3px 3px rgba(93, 2, 116, 0.5);
 }
 .profile__info fieldset {

@@ -1,19 +1,41 @@
 <script setup>
-//import { ref, onMounted } from 'vue'
+import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import UserProfileComponent from '../components/UserProfileComponent.vue'
+import { ref } from 'vue'
 
+//const keys = Object.keys(localStorage)
 const userData = JSON.parse(localStorage.getItem('userData'))
 const username = userData.username
+const userId = userData.id
+const token = userData.token
+const getUserURL = `http://localhost:4000/user/${userId}`
 const points = userData.events.length * 5
+const userProfileImage = ref(
+  'https://cdn.dribbble.com/users/2194760/screenshots/5629242/media/89f6398f30fedb7c04a6d290cec2dedb.gif'
+)
 
-console.log(points)
+const userInfo = async () => {
+  try {
+    const getUserById = await axios.get(getUserURL, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    console.log(getUserById)
+    userProfileImage.value = getUserById.data.profileImg
+    //console.log('Form submitted with data:', getUserInfo.value, getUserInfo.value.data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+userInfo()
 </script>
 
 <template>
   <NavComponent />
   <section>
-    <UserProfileComponent img="" :user="username" :points="points" />
+    <UserProfileComponent :img="userProfileImage" :user="username" :points="points" />
   </section>
 </template>
 

@@ -4,7 +4,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
 //import FileInputImage from '../components/FileInputImage.vue'
-import { handleBackToHome, handleGoToUser } from '@/assets/utils/utils.js'
+import { handleBackToHome } from '@/assets/utils/utils.js'
 
 const router = useRouter()
 
@@ -24,7 +24,7 @@ const formData = ref({
   age: '',
   gender: '',
   occupation: '',
-  about: ''
+  description: ''
 })
 
 const submitForm = async () => {
@@ -35,6 +35,11 @@ const submitForm = async () => {
       }
     })
     console.log('Form submitted with data:', formData.value, response.data)
+    if (response.status === 200) {
+      router.push(`/user`)
+    } else {
+      console.error('Unexpected response status:', response.status)
+    }
   } catch (error) {
     console.log(error)
   }
@@ -82,18 +87,18 @@ const submitForm = async () => {
         v-model="formData.occupation"
         id="occupation"
         type="text"
-        placeholder="Add them with comma (,) separations"
+        placeholder="Add your occupation"
       />
 
-      <label for="about">Tell us more about yourself</label>
+      <label for="description">Tell us more about yourself</label>
       <textarea
-        v-model="formData.about"
-        id="about"
+        v-model="formData.description"
+        id="description"
         placeholder="Write something about you..."
       ></textarea>
       <div class="personal-info__register-buttons">
         <Button color="purple" text="Cancel" @click="handleBackToHome(router)" />
-        <Button color="pink" text="Save" @click="handleGoToUser(router)" />
+        <Button color="pink" text="Save" />
         <!-- <Button color="pink" text="Save" @click="handleGoToUser(router)" /> -->
       </div>
     </form>
