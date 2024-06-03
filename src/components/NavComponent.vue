@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { handleBackToHome } from '../assets/utils/utils'
+import { useUserStore } from '@/stores/user'
 import IconHome from './icons/IconHome.vue'
 import IconProfile from './icons/IconProfile.vue'
 import IconCreateEvent from './icons/IconCreateEvent.vue'
@@ -9,11 +11,9 @@ import IconSettings from './icons/IconSettings.vue'
 import IconCalendar from './icons/IconCalendar.vue'
 import IconClock from './icons/IconClock.vue'
 import IconLogOut from './icons/IconLogOut.vue'
-import { handleBackToHome } from '../assets/utils/utils'
 import router from '@/router/routes'
 import IconMenu from './icons/IconMenu.vue'
 import IconClose from './icons/IconClose.vue'
-import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()
 
