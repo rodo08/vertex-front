@@ -4,7 +4,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
 //import FileInputImage from '../components/FileInputImage.vue'
-import { handleBackToHome } from '@/assets/utils/utils.js'
+import { handleGoToUser } from '@/assets/utils/utils.js'
 
 const router = useRouter()
 
@@ -17,7 +17,7 @@ console.log(userDataObject)
 const token = userDataObject.token
 const userId = userDataObject.id
 
-const updateUserURL = `http://localhost:4000/user/${userId}`
+const updateUserURL = `https://vertex-backend-8lly.onrender.com/user/${userId}`
 
 const formData = ref({
   profileImg: '',
@@ -97,7 +97,7 @@ const submitForm = async () => {
         placeholder="Write something about you..."
       ></textarea>
       <div class="personal-info__register-buttons">
-        <Button color="purple" text="Cancel" @click="handleBackToHome(router)" />
+        <Button color="purple" text="Cancel" @click="handleGoToUser(router)" />
         <Button color="pink" text="Save" />
         <!-- <Button color="pink" text="Save" @click="handleGoToUser(router)" /> -->
       </div>

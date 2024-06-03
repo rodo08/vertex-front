@@ -16,7 +16,7 @@ const handleLogin = async () => {
       alert('Username & Password are required')
       return
     }
-    const response = await axios.post('http://localhost:4000/auth/login', {
+    const response = await axios.post('https://vertex-backend-8lly.onrender.com/auth/login', {
       username: username.value,
       password: password.value
     })

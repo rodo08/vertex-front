@@ -3,7 +3,7 @@ import axios from 'axios'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
-import { handleBackToHome } from '@/assets/utils/utils.js'
+import { handleGoToUser } from '@/assets/utils/utils.js'
 
 const router = useRouter()
 const userData = localStorage.getItem('userData')
@@ -13,7 +13,7 @@ console.log(userDataObject)
 const token = userDataObject.token
 const userId = userDataObject.id
 console.log(userId)
-const createEventURL = `http://localhost:4000/user/${userId}/events`
+const createEventURL = `https://vertex-backend-8lly.onrender.com/user/${userId}/events`
 
 const formData = ref({
   title: '',
@@ -110,7 +110,7 @@ const submitForm = async () => {
         placeholder="Write something about you..."
       ></textarea>
       <div class="event-info__register-buttons">
-        <Button color="purple" text="Cancel" @click="handleBackToHome(router)" />
+        <Button color="purple" text="Cancel" @click="handleGoToUser(router)" />
         <Button color="purple" text="Save" />
         <!-- <Button color="purple" text="Save" @click="handleGoToUser(router)" /> -->
       </div>
