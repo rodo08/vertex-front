@@ -5,7 +5,23 @@ import router from '@/router/routes.js'
 </script>
 <template>
   <section class="error-404">
-    <h1>ERROR 404</h1>
+    <h1>ERROR 4❤4</h1>
+
+    <div>⢀⣤⣶⣶⣦⣄⡀</div>
+    <div>⢀⣼⣿⣿⣿⣿⣯⣿⣿⣦</div>
+    <div>⢀⣾⣷⣿⣿⣿⣿⡇⢿⣿⣿⣇</div>
+    <div>⣾⣿⣿⣿⣿⡿⠟⣤⣥⠹⡝⡟</div>
+    <div>⢿⣿⣾⣯⡻⣶⠀⠈⠛⢀⠞</div>
+    <div>⣄⣹⣿⣿⣧⣀⣠⠖⠒⠽⡀</div>
+    <div>⠛⠿⣟⣿⣿⡿⠁⠀⡀⠀ ⢣</div>
+    <div>⣿⡿⣿⡝⠁⢀⠔⠁⠀ ⡜</div>
+    <div>⠙⢻⠏⢠⠖⠁⠀⠀ ⡰⠁</div>
+    <div>⣠⠤⠴⢤⠃⣰⡇⠀⠀⠀⢸⠁</div>
+    <div>⢰⠁⠀⢠⠇⡜⠀⣳⠆⠀⠀⠀⠑⢄</div>
+    <div>⢣⠽⠚⠈⠉⠉⠀⠀⠀⠀⠀⠀ ⢈⢧</div>
+    <div>⡰⠁⠀⢀⣀⣀⡀⠀⠀⠀⢀⡀⠀⢸⡜</div>
+    <div>⢳⡀⠉⣿⣿⣿⣿⣷⣶⣤⣾⣿⣿⣧⣦⡄</div>
+    <div>⠉⠒⠻⠿⠿⠿⠛⠛⠛⠉⠉⠉⠙⠋⠁</div>
     <p>Lo sentimos, la página que estás intentando ver no existe.</p>
     <Button text="volver" color="pink" @click="handleBackToHome(router)" />
   </section>
@@ -14,12 +30,14 @@ import router from '@/router/routes.js'
 <style scoped>
 .error-404 {
   text-align: center;
-  margin-top: 20vh;
 }
 
+.error-404 div {
+  color: #ff00e1;
+}
 .error-404 h1 {
   font-size: 3rem;
-  color: #4e1057;
+  color: #ff00e1;
 }
 
 .error-404 p {
