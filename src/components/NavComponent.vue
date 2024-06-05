@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { handleBackToHome } from '../assets/utils/utils'
-import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
 import IconHome from './icons/IconHome.vue'
 import IconProfile from './icons/IconProfile.vue'
 import IconCreateEvent from './icons/IconCreateEvent.vue'
@@ -11,11 +11,16 @@ import IconSettings from './icons/IconSettings.vue'
 import IconCalendar from './icons/IconCalendar.vue'
 import IconClock from './icons/IconClock.vue'
 import IconLogOut from './icons/IconLogOut.vue'
-import router from '@/router/routes'
 import IconMenu from './icons/IconMenu.vue'
 import IconClose from './icons/IconClose.vue'
 
-const userStore = useUserStore()
+const router = useRouter()
+
+const logout = () => {
+  router.push('/login')
+  localStorage.clear()
+  alert("You're Logged off!")
+}
 
 const isVisible = ref(false)
 const iconVisibility = ref(true)
@@ -97,7 +102,7 @@ const toggleVisibility = () => {
           <li>
             <a href="#"
               ><IconLogOut />
-              <h2 @click="userStore.logoutUser">Logout</h2>
+              <h2 @click="logout">Logout</h2>
             </a>
           </li>
         </ul>
