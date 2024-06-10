@@ -18,7 +18,7 @@ const userData = localStorage.getItem('userData')
 const userDataObject = JSON.parse(userData)
 const token = userDataObject.token
 const userId = userDataObject.id
-const getUserByIdURL = `https://vertex-backend-8lly.onrender.com/user/${userId}`
+const getUserByIdURL = `https://vertexbackend.onrender.com/user/${userId}`
 
 const eventsList = ref({
   eventTitle: '',

@@ -3,7 +3,6 @@ import axios from 'axios'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
-//import FileInputImage from '../components/FileInputImage.vue'
 import { handleGoToUser } from '@/assets/utils/utils.js'
 
 const router = useRouter()
@@ -17,7 +16,7 @@ console.log(userDataObject)
 const token = userDataObject.token
 const userId = userDataObject.id
 
-const updateUserURL = `https://vertex-backend-8lly.onrender.com/user/${userId}`
+const updateUserURL = `https://vertexbackend.onrender.com/user/${userId}`
 
 const formData = ref({
   profileImg: '',

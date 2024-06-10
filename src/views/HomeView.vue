@@ -2,13 +2,7 @@
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
 import ImageGrid from '../components/ImageGrid.vue'
-//import axios from 'axios'
-// import { useCounterStore } from '../stores/counter'
-// import { storeToRefs } from 'pinia'
 
-// const useCounter = useCounterStore()
-// const { increment } = useCounter
-// const { count, double } = storeToRefs(useCounter)
 
 const router = useRouter()
 const register = () => {
@@ -21,12 +15,7 @@ const login = () => {
 </script>
 
 <template>
-  <!-- EJEMPLO DE PINIA -->
-  <!-- <h1>home counter: {{ count }}</h1>
-    <h1>home double: {{ double }}</h1>
-    <button @click="increment">Increment</button> -->
-  <!-- EJEMPLO DE PINIA -->
-  <main class="home__main">
+    <main class="home__main">
     <section class="home__section">
       <div class="home__section__image-wrapper">
         <ImageGrid />

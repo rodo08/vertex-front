@@ -43,7 +43,6 @@ const toggleVisibility = () => {
         />
       </div>
       <div class="menu">
-        <!-- <button class="toggle-button" @click="toggleMenu">✨</button> -->
         <button class="toggle-button" @click="toggleVisibility">
           <IconMenu v-if="iconVisibility" />
           <IconClose v-else />
