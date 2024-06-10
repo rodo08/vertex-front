@@ -6,10 +6,8 @@ defineProps({
   color: String,
   iconComponent: {
     type: Object
-    //default: () => IconMovie
   }
 })
-//:style="{ backgroundColor: 'color' }"
 </script>
 
 <template>

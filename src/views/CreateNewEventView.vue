@@ -13,7 +13,7 @@ console.log(userDataObject)
 const token = userDataObject.token
 const userId = userDataObject.id
 console.log(userId)
-const createEventURL = `https://vertex-backend-8lly.onrender.com/user/${userId}/events`
+const createEventURL = `https://vertexbackend.onrender.com/user/${userId}/events`
 
 const formData = ref({
   title: '',

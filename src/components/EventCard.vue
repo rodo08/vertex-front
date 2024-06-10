@@ -62,10 +62,6 @@ defineProps({
   top: 0.5rem;
   position: absolute;
   padding-bottom: 0.5rem;
-  /* display: flex;
-  align-items: center;
-  gap: 1rem;  
- */
 }
 .event__data h1,
 p {
