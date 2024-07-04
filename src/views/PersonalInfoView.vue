@@ -42,11 +42,6 @@ const submitForm = async () => {
       <div class="personal-info__info-title">
         <h1>Personal Information</h1>
       </div>
-      <!-- <FileInputImage
-        imageProp="../../src/assets/pretty.png"
-        textProp="Select your profile image:"
-        @change="onFileChange"
-      /> -->
 
       <label for="profileImg">Profile image URL</label>
       <input
@@ -89,16 +84,12 @@ const submitForm = async () => {
       <div class="personal-info__register-buttons">
         <Button color="purple" text="Cancel" @click="handleGoToUser(router)" />
         <Button color="pink" text="Save" />
-        <!-- <Button color="pink" text="Save" @click="handleGoToUser(router)" /> -->
       </div>
     </form>
   </main>
 </template>
 
 <style scoped>
-/* :has(.personal-info__main) body {
-  background-color: #ff00e1;
-} */
 .personal-info__main label {
   padding: 0 0 0.5rem 1rem;
   color: #4e1057;

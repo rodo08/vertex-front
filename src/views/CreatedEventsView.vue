@@ -105,7 +105,7 @@ const handleEventCard = () => {}
       </li>
     </ul>
     <div class="events__button-back">
-      <Button text="Volver" color="purple" @click="handleGoToUser(router)" />
+      <Button text="Go Back" color="purple" @click="handleGoToUser(router)" />
     </div>
   </section>
 </template>

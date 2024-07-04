@@ -1,3 +1,7 @@
+<script setup>
+import NavComponent from '../components/NavComponent.vue'
+</script>
+
 <template>
   <NavComponent />
 
@@ -69,10 +73,6 @@
     </footer>
   </div>
 </template>
-
-<script setup>
-import NavComponent from '../components/NavComponent.vue'
-</script>
 
 <style scoped>
 .bg-light-blue-100 {

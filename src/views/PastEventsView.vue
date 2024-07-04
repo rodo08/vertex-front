@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-//import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import EventCard from '../components/EventCard.vue'
 import Button from '../components/MainButton.vue'
@@ -98,7 +97,7 @@ const handleEventCard = () => {
       </li>
     </ul>
     <div class="events__button-back">
-      <Button text="Volver" color="purple" @click="handleGoToUser(router)" />
+      <Button text="Go back" color="purple" @click="handleGoToUser(router)" />
     </div>
   </section>
 </template>
