@@ -36,24 +36,14 @@ const getUserById = async () => {
     })
     eventsList.value = response.data.events
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 }
 getUserById()
 
-//form - search
 const search = ref('')
 
-const submitForm = () => {
-  const formData = {
-    search: search.value
-  }
-  console.log('Form data:', formData)
-}
-
-const handleEventCard = () => {
-  console.log('test')
-}
+const handleEventCard = () => {}
 </script>
 
 <template>
@@ -119,6 +109,7 @@ const handleEventCard = () => {
     </div>
   </section>
 </template>
+
 <style scoped>
 .search-container {
   max-width: 1080px;

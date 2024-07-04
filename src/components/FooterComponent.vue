@@ -35,28 +35,27 @@ const year = new Date().getFullYear()
             <RouterLink to="/holi">Your Privacy Choices</RouterLink>
           </li>
           <li>
-            <RouterLink to="/holi">Terms of Use</RouterLink>
+            <RouterLink to="#">Terms of Use</RouterLink>
           </li>
           <li>
-            <RouterLink to="/holi">Partners</RouterLink>
+            <RouterLink to="#">Partners</RouterLink>
           </li>
         </ul>
       </div>
       <div class="footer__links">
         <ul>
           <li>
-            <RouterLink to="/holi">Health & Safety</RouterLink>
+            <RouterLink to="#">Health & Safety</RouterLink>
           </li>
           <li>
-            <RouterLink to="/holi">Privacy Policy</RouterLink>
+            <RouterLink to="#">Privacy Policy</RouterLink>
           </li>
           <li>
-            <RouterLink to="/holi">Contact</RouterLink>
+            <RouterLink to="#">Contact</RouterLink>
           </li>
         </ul>
       </div>
     </section>
-    <p class="footer-msg">Made with ❤️ from <strong style="margin-left: 5px">Grupo 03</strong></p>
   </footer>
 </template>
 

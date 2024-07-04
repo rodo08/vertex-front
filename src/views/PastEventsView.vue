@@ -18,15 +18,13 @@ const eventValue = ref('')
 ;(async () => {
   try {
     const eventsData = await getData('http://localhost:3001/events_history')
-    console.log(eventsData)
-    // Manipular los datos de eventos
+
     eventValue.value = eventsData
   } catch (error) {
     console.error(error)
-    // Manejar el error
   }
 })()
-//form - search
+
 const search = ref('')
 
 const submitForm = () => {

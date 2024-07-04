@@ -6,16 +6,7 @@ import Button from '../components/MainButton.vue'
 import { handleGoToUser } from '@/assets/utils/utils.js'
 
 const router = useRouter()
-
-const keys = Object.keys(localStorage)
-console.log(keys)
-const userData = localStorage.getItem('userData')
-console.log(userData)
-const userDataObject = JSON.parse(userData)
-console.log(userDataObject)
-const token = userDataObject.token
-const userId = userDataObject.id
-
+const { token, id: userId } = JSON.parse(localStorage.getItem('userData'))
 const updateUserURL = `https://vertexbackend.onrender.com/user/${userId}`
 
 const formData = ref({
@@ -40,7 +31,7 @@ const submitForm = async () => {
       console.error('Unexpected response status:', response.status)
     }
   } catch (error) {
-    console.log(error)
+    console.error('Error submitting form:', error)
   }
 }
 </script>

@@ -19,20 +19,21 @@ const handleRegister = async () => {
       email: email.value,
       password: password.value
     })
-    alert('register Ok')
-    console.log(response)
+    alert('Registration successful!')
+    console.log('Registration response:', response.data)
     router.push('/login')
   } catch (error) {
     if (error.response && error.response.data.error) {
-      if (error.response.data.error === 'Email already exists') {
+      const errorMessage = error.response.data.error
+      if (errorMessage === 'Email already exists') {
         alert('The email you have entered is already registered.')
       } else {
-        alert(error.response.data.error)
+        alert(errorMessage)
       }
     } else {
       alert('An error occurred')
     }
-    console.error(error)
+    console.error('Registration error:', error)
   }
 }
 </script>
@@ -59,6 +60,7 @@ const handleRegister = async () => {
 
         <label for="password" class="registration-form__label">Password</label>
         <input id="password" type="password" placeholder="Enter password" v-model.trim="password" />
+
         <div class="registration-form__call-to-action">
           <div class="registration-form__buttons">
             <Button
@@ -68,10 +70,10 @@ const handleRegister = async () => {
               @click="handleBackToHome(router)"
               class="registration-form__button"
             />
-            <Button text="Register" color="pink" class="registration-form__button" />
+            <Button type="submit" text="Register" color="pink" class="registration-form__button" />
           </div>
           <p class="registration-form__link">
-            Already have an account? <a href=""><strong>Login</strong></a>
+            Already have an account? <a href="/login"><strong>Login</strong></a>
           </p>
         </div>
       </form>

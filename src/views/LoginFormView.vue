@@ -23,7 +23,6 @@ const handleLogin = async () => {
 
     localStorage.setItem('userData', JSON.stringify(response.data))
     localStorage.setItem('username', username.value)
-    console.log('Respuesta del backend al iniciar sesión:', response.data)
     const token = response.data.token
     localStorage.setItem('token', token)
 
