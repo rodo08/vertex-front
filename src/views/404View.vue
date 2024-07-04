@@ -22,8 +22,8 @@ import router from '@/router/routes.js'
     <div>⡰⠁⠀⢀⣀⣀⡀⠀⠀⠀⢀⡀⠀⢸⡜</div>
     <div>⢳⡀⠉⣿⣿⣿⣿⣷⣶⣤⣾⣿⣿⣧⣦⡄</div>
     <div>⠉⠒⠻⠿⠿⠿⠛⠛⠛⠉⠉⠉⠙⠋⠁</div>
-    <p>Lo sentimos, la página que estás intentando ver no existe.</p>
-    <Button text="volver" color="pink" @click="handleBackToHome(router)" />
+    <p>Sorry, the page you're looking for doesn't exist.</p>
+    <Button text="Go Back" color="pink" @click="handleBackToHome(router)" />
   </section>
 </template>
 

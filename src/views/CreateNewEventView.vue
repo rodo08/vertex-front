@@ -6,13 +6,11 @@ import Button from '../components/MainButton.vue'
 import { handleGoToUser } from '@/assets/utils/utils.js'
 
 const router = useRouter()
-const userData = localStorage.getItem('userData')
-console.log(userData)
-const userDataObject = JSON.parse(userData)
-console.log(userDataObject)
-const token = userDataObject.token
-const userId = userDataObject.id
-console.log(userId)
+const userData = JSON.parse(localStorage.getItem('userData'))
+
+const token = userData.token
+const userId = userData.id
+
 const createEventURL = `https://vertexbackend.onrender.com/user/${userId}/events`
 
 const formData = ref({
@@ -31,7 +29,7 @@ const submitForm = async () => {
         Authorization: `Bearer ${token}`
       }
     })
-    console.log('Form submitted with data:', formData.value, response.data)
+
     if (response.status === 201) {
       alert('Event created successfully!')
       router.push(`/user`)
@@ -39,7 +37,7 @@ const submitForm = async () => {
       console.error('Unexpected response status:', response.status)
     }
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 }
 </script>
@@ -50,15 +48,11 @@ const submitForm = async () => {
       <div class="event-info__info-title">
         <h1>Create New Event</h1>
         <p>
-          <strong>Create a new event and capture your moments!</strong> <br />Enter the details in
-          the form below and bring your next unforgettable experience to life. <br />
+          <strong>Create a new event and capture your moments!</strong> <br />
+          Enter the details in the form below and bring your next unforgettable experience to life.
         </p>
       </div>
-      <!-- <FileInputImage
-        imageProp="../../src/assets/pretty.png"
-        textProp="Select your Event  main image:"
-        @change="onFileChange"
-      /> -->
+
       <label for="profileImg">Event image URL</label>
       <input
         v-model="formData.eventImg"
@@ -74,12 +68,7 @@ const submitForm = async () => {
       <input v-model="formData.eventDate" id="date" type="date" placeholder="Event Schedule" />
 
       <label for="type">Event type</label>
-      <select
-        v-model="formData.eventType"
-        id="type"
-        class="event-info__form-select"
-        aria-label="Default select example"
-      >
+      <select v-model="formData.eventType" id="type" class="event-info__form-select">
         <option value="" disabled selected>Select event type</option>
         <option value="festival">Festival</option>
         <option value="party">Party</option>
@@ -112,17 +101,12 @@ const submitForm = async () => {
       <div class="event-info__register-buttons">
         <Button color="purple" text="Cancel" @click="handleGoToUser(router)" />
         <Button color="purple" text="Save" />
-        <!-- <Button color="purple" text="Save" @click="handleGoToUser(router)" /> -->
       </div>
     </form>
   </main>
 </template>
 
 <style>
-/* :has(.event-info__main) body {
-  background-color: #ff00e1;
-} */
-
 .event-info__main {
   display: flex;
   align-items: center;
@@ -136,13 +120,16 @@ const submitForm = async () => {
   font-size: 2.5rem;
   color: #ff00e1;
 }
+
 .event-info__main span {
   color: #4e1057;
 }
+
 .event-info__info-title {
   display: flex;
   flex-direction: column;
 }
+
 .event-info__info-title p {
   margin: 0;
   padding: 0 0 4rem 0;
@@ -154,13 +141,10 @@ const submitForm = async () => {
   max-width: 400px;
   width: 100%;
 }
+
 .event-info__form label {
   padding: 0 0 0.5rem 1rem;
   color: #4e1057;
-}
-
-.event-info__form button {
-  align-items: center;
 }
 
 .event-info__register-buttons {

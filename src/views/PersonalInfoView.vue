@@ -6,16 +6,7 @@ import Button from '../components/MainButton.vue'
 import { handleGoToUser } from '@/assets/utils/utils.js'
 
 const router = useRouter()
-
-const keys = Object.keys(localStorage)
-console.log(keys)
-const userData = localStorage.getItem('userData')
-console.log(userData)
-const userDataObject = JSON.parse(userData)
-console.log(userDataObject)
-const token = userDataObject.token
-const userId = userDataObject.id
-
+const { token, id: userId } = JSON.parse(localStorage.getItem('userData'))
 const updateUserURL = `https://vertexbackend.onrender.com/user/${userId}`
 
 const formData = ref({
@@ -40,7 +31,7 @@ const submitForm = async () => {
       console.error('Unexpected response status:', response.status)
     }
   } catch (error) {
-    console.log(error)
+    console.error('Error submitting form:', error)
   }
 }
 </script>
@@ -51,11 +42,6 @@ const submitForm = async () => {
       <div class="personal-info__info-title">
         <h1>Personal Information</h1>
       </div>
-      <!-- <FileInputImage
-        imageProp="../../src/assets/pretty.png"
-        textProp="Select your profile image:"
-        @change="onFileChange"
-      /> -->
 
       <label for="profileImg">Profile image URL</label>
       <input
@@ -98,16 +84,12 @@ const submitForm = async () => {
       <div class="personal-info__register-buttons">
         <Button color="purple" text="Cancel" @click="handleGoToUser(router)" />
         <Button color="pink" text="Save" />
-        <!-- <Button color="pink" text="Save" @click="handleGoToUser(router)" /> -->
       </div>
     </form>
   </main>
 </template>
 
 <style scoped>
-/* :has(.personal-info__main) body {
-  background-color: #ff00e1;
-} */
 .personal-info__main label {
   padding: 0 0 0.5rem 1rem;
   color: #4e1057;

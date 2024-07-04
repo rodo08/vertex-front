@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-//import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import EventCard from '../components/EventCard.vue'
 import Button from '../components/MainButton.vue'
@@ -18,15 +17,13 @@ const eventValue = ref('')
 ;(async () => {
   try {
     const eventsData = await getData('http://localhost:3001/events_history')
-    console.log(eventsData)
-    // Manipular los datos de eventos
+
     eventValue.value = eventsData
   } catch (error) {
     console.error(error)
-    // Manejar el error
   }
 })()
-//form - search
+
 const search = ref('')
 
 const submitForm = () => {
@@ -100,7 +97,7 @@ const handleEventCard = () => {
       </li>
     </ul>
     <div class="events__button-back">
-      <Button text="Volver" color="purple" @click="handleGoToUser(router)" />
+      <Button text="Go back" color="purple" @click="handleGoToUser(router)" />
     </div>
   </section>
 </template>

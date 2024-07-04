@@ -1,8 +1,4 @@
-<script setup>
-import { useUserStore } from '../stores/user'
-
-const userStore = useUserStore()
-</script>
+<script setup></script>
 
 <template>
   <section class="holi">
