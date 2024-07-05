@@ -6,6 +6,10 @@ import Button from '../components/MainButton.vue'
 import axios from 'axios'
 import ImageGrid from '@/components/ImageGrid.vue'
 
+const apiUrl = ref(import.meta.env.VITE_APP_API_URL)
+
+console.log('API URL:', apiUrl.value)
+
 const router = useRouter()
 const username = ref('')
 const password = ref('')
@@ -23,6 +27,7 @@ const handleLogin = async () => {
 
     localStorage.setItem('userData', JSON.stringify(response.data))
     localStorage.setItem('username', username.value)
+    console.log('Respuesta del backend al iniciar sesión:', response.data)
     const token = response.data.token
     localStorage.setItem('token', token)
 
