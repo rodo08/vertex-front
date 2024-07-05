@@ -1,5 +1,9 @@
 import axios from 'axios'
 
+export const apiUrl = import.meta.env.VITE_APP_API_URL
+
+export const client = import.meta.env.VITE_APP_API_PEXELS_CLIENT
+
 export const handleBackToHome = (router) => {
   router.push('/')
 }

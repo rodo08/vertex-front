@@ -16,15 +16,12 @@ defineProps({
 const router = useRouter()
 const createdEvents = () => {
   router.push('/created-events')
-  console.log('test')
 }
 const createEvents = () => {
   router.push('/create-event')
-  console.log('test')
 }
 const pastEvents = () => {
   router.push('/past-events')
-  console.log('test')
 }
 </script>
 

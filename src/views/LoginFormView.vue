@@ -1,14 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { handleBackToHome } from '@/assets/utils/utils'
+import { handleBackToHome, apiUrl } from '@/assets/utils/utils'
 import Button from '../components/MainButton.vue'
 import axios from 'axios'
 import ImageGrid from '@/components/ImageGrid.vue'
-
-const apiUrl = ref(import.meta.env.VITE_APP_API_URL)
-
-console.log('API URL:', apiUrl.value)
 
 const router = useRouter()
 const username = ref('')
@@ -20,14 +16,14 @@ const handleLogin = async () => {
       alert('Username & Password are required')
       return
     }
-    const response = await axios.post('https://vertexbackend.onrender.com/auth/login', {
+    const response = await axios.post(`${apiUrl}/auth/login`, {
       username: username.value,
       password: password.value
     })
 
     localStorage.setItem('userData', JSON.stringify(response.data))
     localStorage.setItem('username', username.value)
-    console.log('Respuesta del backend al iniciar sesión:', response.data)
+
     const token = response.data.token
     localStorage.setItem('token', token)
 

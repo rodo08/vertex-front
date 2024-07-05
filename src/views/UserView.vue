@@ -3,10 +3,11 @@ import axios from 'axios'
 import NavComponent from '../components/NavComponent.vue'
 import UserProfileComponent from '../components/UserProfileComponent.vue'
 import { ref } from 'vue'
+import { apiUrl } from '../assets/utils/utils.js'
 
 const userData = JSON.parse(localStorage.getItem('userData'))
 const { username, id: userId, token } = userData
-const getUserURL = `https://vertexbackend.onrender.com/user/${userId}`
+const getUserURL = `${apiUrl}/user/${userId}`
 const points = ref(userData.events.length * 5)
 const userProfileImage = ref(
   'https://cdn.dribbble.com/users/2194760/screenshots/5629242/media/89f6398f30fedb7c04a6d290cec2dedb.gif'

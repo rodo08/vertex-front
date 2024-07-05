@@ -1,12 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { handleBackToHome } from '@/assets/utils/utils'
+import { handleBackToHome, apiUrl } from '@/assets/utils/utils'
 import Button from '../components/MainButton.vue'
 import ImageGrid from '@/components/ImageGrid.vue'
 import axios from 'axios'
 
-const registerURL = `https://vertexbackend.onrender.com/auth/register`
+const registerURL = `${apiUrl}/auth/register`
 const router = useRouter()
 const username = ref('')
 const email = ref('')
