@@ -6,7 +6,7 @@ import Button from '../components/MainButton.vue'
 import ImageGrid from '@/components/ImageGrid.vue'
 import axios from 'axios'
 
-const registerURL = 'https://vertexbackend.onrender.com/auth/register'
+const registerURL = `https://vertexbackend.onrender.com/auth/register`
 const router = useRouter()
 const username = ref('')
 const email = ref('')
