@@ -10,13 +10,13 @@ import IconSports from '../components/icons/IconSports.vue'
 import IconOnline from '../components/icons/IconOnline.vue'
 import IconFriends from '../components/icons/IconFriends.vue'
 import IconSupport from '../components/icons/IconSupport.vue'
-import { handleGoToUser, getData } from '@/assets/utils/utils.js'
+import { handleGoToUser, getData, apiUrl } from '@/assets/utils/utils.js'
 import router from '@/router/routes'
 
 const eventValue = ref('')
 ;(async () => {
   try {
-    const eventsData = await getData('http://localhost:3001/events_history')
+    const eventsData = await getData(`${apiUrl}/events_history`)
 
     eventValue.value = eventsData
   } catch (error) {

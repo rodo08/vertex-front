@@ -1,9 +1,7 @@
 <script setup>
 import axios from 'axios'
 import { ref } from 'vue'
-import { query } from '../assets/utils/utils.js'
-
-const client = 'plypAcwRkABRhcMvUSR67cXgNETF8anKDtaf1x4NavFnrzdf3VbkCuxL'
+import { query, client } from '../assets/utils/utils.js'
 
 const randomNumber = Math.ceil(Math.random() * (`${query.length}` - 1))
 

@@ -3,11 +3,11 @@ import axios from 'axios'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
-import { handleGoToUser } from '@/assets/utils/utils.js'
+import { handleGoToUser, apiUrl } from '@/assets/utils/utils.js'
 
 const router = useRouter()
 const { token, id: userId } = JSON.parse(localStorage.getItem('userData'))
-const updateUserURL = `https://vertexbackend.onrender.com/user/${userId}`
+const updateUserURL = `${apiUrl}/user/${userId}`
 
 const formData = ref({
   profileImg: '',
@@ -24,7 +24,7 @@ const submitForm = async () => {
         Authorization: `Bearer ${token}`
       }
     })
-    console.log('Form submitted with data:', formData.value, response.data)
+
     if (response.status === 200) {
       router.push(`/user`)
     } else {

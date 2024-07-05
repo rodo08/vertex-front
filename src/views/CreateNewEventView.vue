@@ -3,7 +3,7 @@ import axios from 'axios'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
-import { handleGoToUser } from '@/assets/utils/utils.js'
+import { handleGoToUser, apiUrl } from '@/assets/utils/utils.js'
 
 const router = useRouter()
 const userData = JSON.parse(localStorage.getItem('userData'))
@@ -11,7 +11,7 @@ const userData = JSON.parse(localStorage.getItem('userData'))
 const token = userData.token
 const userId = userData.id
 
-const createEventURL = `https://vertexbackend.onrender.com/user/${userId}/events`
+const createEventURL = `${apiUrl}/user/${userId}/events`
 
 const formData = ref({
   title: '',

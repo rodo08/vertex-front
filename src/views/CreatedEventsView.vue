@@ -11,14 +11,14 @@ import IconSports from '../components/icons/IconSports.vue'
 import IconOnline from '../components/icons/IconOnline.vue'
 import IconFriends from '../components/icons/IconFriends.vue'
 import IconSupport from '../components/icons/IconSupport.vue'
-import { handleGoToUser } from '@/assets/utils/utils.js'
+import { handleGoToUser, apiUrl } from '@/assets/utils/utils.js'
 import router from '@/router/routes'
 
 const userData = localStorage.getItem('userData')
 const userDataObject = JSON.parse(userData)
 const token = userDataObject.token
 const userId = userDataObject.id
-const getUserByIdURL = `https://vertexbackend.onrender.com/user/${userId}`
+const getUserByIdURL = `${apiUrl}/user/${userId}`
 
 const eventsList = ref({
   eventTitle: '',

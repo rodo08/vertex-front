@@ -38,7 +38,7 @@ const toggleVisibility = () => {
         <img
           src="../../src/assets/vertex_horizontal-01.svg"
           width="150"
-          alt=""
+          alt="vertex logo"
           @click="handleBackToHome(router)"
         />
       </div>
