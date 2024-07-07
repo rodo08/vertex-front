@@ -181,6 +181,7 @@ const handleLogin = async () => {
 
   .registration-form__title {
     font-size: 2rem;
+    padding: 0 0 2rem;
   }
 
   .registration-form__buttons {
