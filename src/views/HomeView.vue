@@ -3,7 +3,6 @@ import { useRouter } from 'vue-router'
 import Button from '../components/MainButton.vue'
 import ImageGrid from '../components/ImageGrid.vue'
 
-
 const router = useRouter()
 const register = () => {
   router.push('/register')
@@ -15,7 +14,7 @@ const login = () => {
 </script>
 
 <template>
-    <main class="home__main">
+  <main class="home__main">
     <section class="home__section">
       <div class="home__section__image-wrapper">
         <ImageGrid />
@@ -106,5 +105,15 @@ strong {
 }
 .home__legal-disclaim a:hover {
   color: #ff00e1;
+}
+
+@media screen and (max-width: 860px) {
+  .home__section {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+  .home__buttons {
+    flex-direction: column;
+  }
 }
 </style>
