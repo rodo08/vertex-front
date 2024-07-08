@@ -63,6 +63,7 @@ const handleRegister = async () => {
 
         <div class="registration-form__call-to-action">
           <div class="registration-form__buttons">
+            <Button type="submit" text="Register" color="pink" class="registration-form__button" />
             <Button
               type="button"
               text="Cancel"
@@ -70,7 +71,6 @@ const handleRegister = async () => {
               @click="handleBackToHome(router)"
               class="registration-form__button"
             />
-            <Button type="submit" text="Register" color="pink" class="registration-form__button" />
           </div>
           <p class="registration-form__link">
             Already have an account? <a href="/login"><strong>Login</strong></a>

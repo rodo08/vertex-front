@@ -51,13 +51,13 @@ const handleLogin = async () => {
         <input id="password" type="password" placeholder="Enter password" v-model.trim="password" />
         <div class="registration-form__call-to-action">
           <div class="registration-form__buttons">
+            <Button type="submit" text="Login" color="pink" class="registration-form__button" />
             <Button
               text="Cancel"
               color="purple"
               @click="handleBackToHome(router)"
               class="registration-form__button"
             />
-            <Button type="submit" text="Login" color="pink" class="registration-form__button" />
           </div>
           <p class="registration-form__link">
             Don't have an account? <a href=""><strong>Register</strong></a>
