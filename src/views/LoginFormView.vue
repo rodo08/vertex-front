@@ -51,13 +51,13 @@ const handleLogin = async () => {
         <input id="password" type="password" placeholder="Enter password" v-model.trim="password" />
         <div class="registration-form__call-to-action">
           <div class="registration-form__buttons">
+            <Button type="submit" text="Login" color="pink" class="registration-form__button" />
             <Button
               text="Cancel"
               color="purple"
               @click="handleBackToHome(router)"
               class="registration-form__button"
             />
-            <Button type="submit" text="Login" color="pink" class="registration-form__button" />
           </div>
           <p class="registration-form__link">
             Don't have an account? <a href=""><strong>Register</strong></a>
@@ -112,8 +112,6 @@ const handleLogin = async () => {
   height: 2.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  /* border-radius: 5px;
-  border: 1px solid #6c4c67; */
 }
 
 .registration-form__title {
@@ -141,10 +139,12 @@ const handleLogin = async () => {
 .registration-form__link {
   color: #4e1057;
 }
+
 .registration-form__link a {
   color: #4e1057;
   transition: color 0.3s ease-in;
 }
+
 .registration-form__link a:hover {
   color: #ff00e1;
 }
@@ -153,14 +153,17 @@ const handleLogin = async () => {
   font-weight: bolder;
 }
 
-@media (max-width: 700px) {
+/* Media Queries */
+@media (max-width: 973px) {
   .registration-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    grid-gap: 0;
   }
 
   .registration-form__img-container {
+    padding: 0;
     display: flex;
     justify-content: center;
     padding: 1.5rem 0 2rem;
@@ -173,11 +176,16 @@ const handleLogin = async () => {
   }
 
   .registration-form__form {
-    width: 80%;
+    width: 100%;
   }
 
   .registration-form__title {
     font-size: 2rem;
+    padding: 0 0 2rem;
+  }
+
+  .registration-form__buttons {
+    flex-direction: column;
   }
 }
 </style>

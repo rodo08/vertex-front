@@ -147,4 +147,23 @@ li {
   text-align: center;
   font-size: 0.8rem;
 }
+
+@media screen and (max-width: 860px) {
+  .footer section {
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 0 1rem 1rem;
+  }
+
+  .footer__copyright {
+    align-items: center;
+  }
+  .footer__links {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer__links ul {
+    margin: 0;
+  }
+}
 </style>
