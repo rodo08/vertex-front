@@ -169,15 +169,10 @@ const handleRegister = async () => {
 
 @media (max-width: 700px) {
   .registration-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 100vh;
-  }
-
-  .registration-form__img-container {
     display: flex;
-    justify-content: center;
-    padding: 1.5rem 0 2rem;
+    flex-direction: column;
+    padding: 0 1rem;
+    grid-gap: 0;
   }
 
   .registration-form__form-container {
@@ -186,12 +181,24 @@ const handleRegister = async () => {
     align-items: center;
   }
 
+  .registration-form__img-container {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0 2rem;
+  }
+
   .registration-form__form {
-    width: 80%;
+    width: 100%;
   }
 
   .registration-form__title {
     font-size: 2rem;
+    padding: 0 0 2rem;
+  }
+
+  .registration-form__buttons {
+    flex-direction: column;
   }
 }
 </style>
